@@ -1,0 +1,17 @@
+#!/bin/bash
+# Start working on the project
+
+export p=~/Projects/hammer
+
+# Path
+export PATH=\
+$p/bin:\
+$PYTHONPATH:\
+/usr/bin:\
+/bin:\
+.
+
+figlet 'hammer'
+
+cd $p
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Show the pipe scan home page
+echo 'Show the app in a browser'
+
+~/Projects/hammer/app/run
+

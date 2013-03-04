@@ -1,0 +1,12 @@
+#!/bin/bash
+# Find this text
+
+cd $p
+[[ -f "doc/$1" ]] && cat "doc/$1" && exit 0
+
+echo "$1"
+echo 1.
+echo 2.
+echo 3.
+echo 4.
+
