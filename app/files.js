@@ -37,7 +37,7 @@ var execute_file = function(command, action) {
 
 // Format a wiki page
 var wiki_file = function(doc, action) {
-    execute_file('wiki-html-content ../doc/'+doc, function(stdout) {
+    execute_file('hammer-read ../doc/'+doc, function(stdout) {
         action(stdout);
     });
 }

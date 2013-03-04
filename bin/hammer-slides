@@ -1,4 +1,0 @@
-!#/bin/bash
-# Slides for pipe scan
-
-w $p/doc/Slides/pipe-scan.html
