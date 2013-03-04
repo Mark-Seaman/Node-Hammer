@@ -1,0 +1,13 @@
+#!/bin/bash
+# Start the node app and load the top page
+
+cd $p/app
+
+# Kill the old process
+killall node
+
+# Start the server
+rbg node app.js
+
+# Show the web page
+w localhost:8080

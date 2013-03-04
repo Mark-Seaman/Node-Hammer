@@ -1,0 +1,49 @@
+* Hammer Technology  *                 -*-muse-*-
+
+**Hammer Application**
+Welcome to the Hammer project
+This project showcases the following standard technologies
+        
+ * Node.JS
+ * MongoDB
+ * Backbone
+ * Express
+ * Jade
+
+It also shows off some technologies that I have built for other projects.
+ * wiki tools
+ * auto test
+      
+**gettting started**
+Run a console window
+Change directory to $x/hammer
+Run hammer-build to do all of the required setup
+Run hammer-show to show the starting point for the application</p>
+
+**tricks**
+Learn the tricks that are required to create an application like this.
+This site is a step-by-step presentation of each trick with sample code to show you how it is done.
+
+
+This project focuses on the tools and processes for quickly turning on
+production quality web sites.  
+
+Key technologies include:
+ *  Django
+ *  Python
+ *  MySQL
+ *  Linux 
+ *  Web Faction hosting
+ *  Emacs
+
+Technical capabilities:
+ *  Web site 
+ *  Standard navigation
+ *  CSS
+ *  Forms process
+ *  Database updates
+
+
+See also [[Tricks]]
+
+

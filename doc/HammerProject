@@ -1,0 +1,31 @@
+* Hammer Project *                 -*-muse-*-
+
+_____________________________________________________________________________
+
+**Actions**
+5-view support in notes
+
+5-view support with mongoose
+    mongoose: mongo db access
+    dir-list: file I/O, web pages
+    notes: views (list, detail)
+    4thot: data model
+    five-view: create,list,detail,edit,delete
+
+project docs
+
+tricks catalog
+    create trick area pages
+    create trick page template
+    create 50 trick pages
+    complete application tutorial
+    live tutor: write code for me
+
+deploy notes app 
+    Node.JS on Web Faction
+    deployment scripts
+    deploy on web faction
+
+_____________________________________________________________________________
+
+See also [[Home]]

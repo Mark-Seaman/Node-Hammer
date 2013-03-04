@@ -1,0 +1,21 @@
+* Hammer Tricks *                 -*-muse-*-
+Developing a web application requires 50 tricks.
+
+
+**Web Development**
+For you to develop a modern web application you will likely need to develop functionality in all of
+the following areas.
+
+
+ * [[ServerTricks][server]]
+ * [[DatabaseTricks][database]]
+ * [[ViewsTricks][views]]
+ * [[FormattingTricks][formatting]]
+ * [[PagesTricks][pages]]
+ * [[ScriptingTricks][scripting]]
+ * [[UsersTricks][users]]
+ * [[DownloadTricks][download]]
+ * [[FilesTricks][files]]
+ * [[ComputersTricks][computers]]
+
+See also HammerTechnology, TechnologyTricks

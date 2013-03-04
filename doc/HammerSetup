@@ -1,0 +1,7 @@
+* **Hammer Setup** *                 -*-muse-*-
+
+ *  Run a console window
+ *  Run setup-nodejs (to install the Node.JS application)
+ *  Run hammer (to change the correct directory)
+ *  Run hammer-show to show the starting point for the application
+

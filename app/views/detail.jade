@@ -1,0 +1,14 @@
+extends layout
+
+block title
+  title Detail - #{id}
+
+block content
+  p 
+    a(href='/') List 
+    t= ' * '
+    a(href='/#{id}/edit') Edit
+  hr
+  h1 Detail: #{id}
+  pre #{data}
+

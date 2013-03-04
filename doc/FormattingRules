@@ -1,0 +1,25 @@
+* Formatting Rules *                 -*-muse-*-
+
+This page shows how you can get the format that you want.
+
+After viewing this page edit the file FormattingRules in the doc folder.
+
+ regular text
+
+ **bold text**
+
+ *italic text*
+
+regular text and **bold** text together
+
+List of items
+ * Bullet point #1
+ * Bullet point #2
+
+See also [[Hyperlinks]]
+
+
+
+
+
+

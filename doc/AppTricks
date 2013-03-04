@@ -1,0 +1,31 @@
+* Application Tricks *                 -*-muse-*-
+
+**Key areas to learn**
+    use hammer technology stack (node,express,jade,mongo,backbone,html5)
+    install framework
+    read book (Applications with Node.JS, MongoDB, and Backbone)
+    build trick list
+    illustrate tricks
+    hosting
+    package list
+
+    **new-app**
+    create the world's simplest application
+    [[../tricks/app/new-app][Source]]
+
+    **http-server**
+    answer http requests 
+    [[../tricks/app/http-server][Source]]
+
+    **page-server**
+    return web pages
+    [[../tricks/app/page-server'>Source]]
+
+    **post-server**
+    post and display blog articles
+    [[../tricks/app/post-server][Source]]
+
+    **image-server**
+    upload and display photos
+    [[../tricks/app/image-server][Source]]
+

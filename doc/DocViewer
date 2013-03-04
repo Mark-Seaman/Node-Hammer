@@ -1,0 +1,13 @@
+* Hammer Doc Viewer *                                                   -*- muse -*-
+
+This viewer uses the Hammer Technology Engine to display documents.
+
+**How to use it**
+Place documents in the doc folder.
+Run the server app.
+Browse the application web page.
+Follow the hyperlinks.
+
+ * [[Page1]]
+ * [[Page2]]
+

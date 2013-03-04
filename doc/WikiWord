@@ -1,0 +1,7 @@
+Wiki Word
+
+This is the fastest way to create a hyperlink in a document.  Any word that has uppercase followed by lower and another uppercase character is a wiki word.
+
+It will automatically link to a document with the same spelling as the title.
+
+

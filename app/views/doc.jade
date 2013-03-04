@@ -1,0 +1,22 @@
+extends layout
+
+block title
+  title Doc Viewer - #{path}
+
+block content
+  #links
+    p 
+      a(href='/') List 
+      t= ' * '
+      a(href='/#{path}/edit') Edit
+    hr
+
+  #title
+    div(style='margin:3em') 
+      p
+        doc= 'file: /home/seaman/Code/hammer/notes/doc/' + path
+
+  #results
+    div(style='margin:3em;border:solid 1px') 
+      blockquote
+        results!= text

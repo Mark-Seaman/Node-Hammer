@@ -1,0 +1,70 @@
+* Technology Tricks *                 -*-muse-*-
+Developing a web application requires 50 tricks.
+
+**Technologies**
+
+Learn how to use the following technology
+ * Node.JS
+ * MongoDB
+ * Backbone
+ * Express
+ * Jade
+
+**Tricks**
+Each of the areas of the Hammer Technology is demonstrated with examples.
+ * [[ApplicationTricks][app]]
+ * [[node]]
+ * [[express]]
+ * [[jade]]
+ * [[socket]]
+ * [[mongo]]
+ * [[backbone]]
+ * [[html]]
+
+
+**node.js** - [[../tricks/node]]
+    new application
+    periodic events
+    js state machine 
+    read and write files
+
+**express** - [[../tricks/express]]
+    install express
+    express app
+    directory structure
+
+**jade**
+    install jade
+    basic jade template
+    base template and extended template
+    standard branding
+    twitter bootstrap
+    variables in template
+    executing code in a view
+    form data processing
+
+**socket.io**
+    install socket.io
+    chat session
+    stop watch
+    news feed
+    banner rotate
+
+**mongo db**
+    install mongo db
+    insert
+    update
+    query
+    partial update
+
+**backbone**
+    install backbone
+
+**html5**
+    create canvas
+    draw lines
+    draw filled polygons
+    drop shadows
+    draw grid
+    draw graph
+

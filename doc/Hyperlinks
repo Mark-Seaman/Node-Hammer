@@ -1,0 +1,26 @@
+* Hyperlinks *                 -*-muse-*-
+
+This page shows how you can get the link that you want.
+
+**External links**
+
+http://shrinking-world.org   
+
+[[http://shrinking-world.org][Shrinking World Solutions]] 
+
+_______________________________________________________
+
+**Internal Links**
+
+WikiWord  -- use a wiki word
+
+[[Home]] -- single part link
+
+[[Home][go back home]] -- double part link
+
+
+See also FormattingRules
+
+
+
+
