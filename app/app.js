@@ -13,7 +13,12 @@ app.set('views',        __dirname+'/views');
 
 app.use(express.bodyParser()); // Automatically parses form data
 
+//-----------------------------------------------------------------------------
 // Static files
+app.get('/favicon.ico', function(req, res){
+    res.sendfile ('views/favicon.ico');
+});
+
 app.get('/views/*?:file?', function(req, res){
     res.sendfile ('views/'+req.params.file);
 });
