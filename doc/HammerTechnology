@@ -5,6 +5,7 @@ Welcome to the Hammer project
 This project showcases the following standard technologies
         
  * Node.JS
+ * Mongoose
  * MongoDB
  * Backbone
  * Express
@@ -45,5 +46,6 @@ Technical capabilities:
 
 
 See also [[Tricks]]
+
 
 
