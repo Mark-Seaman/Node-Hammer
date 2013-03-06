@@ -10,4 +10,4 @@ killall node
 rbg node app.js
 
 # Show the web page
-w localhost:8080/Home
+w localhost:8080/

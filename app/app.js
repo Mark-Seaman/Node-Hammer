@@ -52,20 +52,20 @@ app.get('/:app/:doc', function(req, res){
 // Edit view
 app.get('/:app/:doc/edit', function(req, res) {
     app = req.params.app;
-    path = req.params.doc;
-    files.read (app, path, function (data) { 
-        res.render ('edit', {path:path, text:data.data} ); 
+    doc = req.params.doc;
+    files.read (app, doc, function (text) { 
+        res.render ('edit', {app:app, doc:doc, text:text} ); 
     });
 });
 
 // Save view
 app.post('/:app/edit', function(req, res){
     app = req.params.app;
-    path = req.body.path;
+    doc = req.body.doc;
     text = req.body.text.replace(/\r/gm,'');
-    if (req.param('cancel')) return res.redirect ('/'+path); 
-    files.write (app, path, text, function () {
-        res.redirect ('/'+path); 
+    if (req.param('cancel')) return res.redirect ('/'+app+'/'+doc); 
+    files.write (app, doc, text, function () {
+        res.redirect ('/'+app+'/'+doc); 
     });
 });
 

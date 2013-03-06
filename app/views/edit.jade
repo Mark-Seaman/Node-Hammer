@@ -1,17 +1,14 @@
 extends layout
 
 block title
-  title Edit #{path}
+  title Edit #{doc}
 
 block content
-  h1 Edit: #{path}
+  h1 Edit: #{doc}
 
-  p Return to 
-    a(href='/dir') Directory
-
-  form(method="post", action="/edit")
-    p Path:
-      input(name='path', type='text', value='#{path}') 
+  form(method="post", action="/#{app}/edit")
+    p Doc:
+      input(name='doc', type='text', value='#{doc}') 
     p
       style textarea{height:400px; width:90%}
       textarea(name='text',type='text',rows="4",cols="50") #{text}
