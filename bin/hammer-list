@@ -1,0 +1,8 @@
+#!/bin/bash
+# Find this text
+
+cd $p/doc
+[[ "$1" == "" ]] && ls && exit 0
+
+find | grep -i "$1" |sed 's/^..//'
+

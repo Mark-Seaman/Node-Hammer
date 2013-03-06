@@ -1,6 +1,0 @@
-#!/bin/bash
-# Find this text
-
-cd $p
-grep -ih "$1" doc/* | sort -u
-

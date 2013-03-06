@@ -3,11 +3,11 @@ var exec       = require('child_process').exec;
 
 
 // List the files and perform an action
-var list_files = function (path, action) {
-    fs.readdir(path, function(err, files) {
-        if (err) files = ['No directory'];
-        action({ files:files });
-    });
+var list_files = function (doc, action) {
+    exec('hammer-list '+doc, function(error,stdout) {
+        if (error) stdout = ['No directory'];
+        action({ files:stdout.split('\n') });
+    });   
 }
 
 // Read the file and perform an action
@@ -19,25 +19,17 @@ var read_file = function (path, action) {
 }
 
 // Read the file and perform an action
-var write_file = function (path, text, action) {
-    var stream = fs.createWriteStream(path);
-    stream.once('open', function(fd) {
-        stream.write(text+"\n");
-        stream.end();
-        action();
-    });
-}
-
-// Execute a command and act on the output
-var execute_file = function(command, action) {
-    exec(command, function(error,stdout) {
-        action(stdout);    
-    });
+var write_file = function (doc, text, action) {
+    p = exec('hammer-edit ../doc/'+doc, function(error,stdout) {
+        action(stdout);
+    })
+    p.stdin.write(text);
+    p.stdin.end();
 }
 
 // Format a wiki page
-var wiki_file = function(doc, action) {
-    execute_file('hammer-read ../doc/'+doc, function(stdout) {
+var format_file = function(doc, action) {
+    exec('hammer-show ../doc/'+doc, function(error,stdout) {
         action(stdout);
     });
 }
@@ -45,5 +37,4 @@ var wiki_file = function(doc, action) {
 exports.list    = list_files;
 exports.read    = read_file;
 exports.write   = write_file;
-exports.execute = execute_file;
-exports.wiki    = wiki_file;
+exports.format  = format_file;

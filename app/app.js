@@ -25,7 +25,7 @@ app.get('/views/*?:file?', function(req, res){
 
 // List view
 app.get('/', function(req, res){
-    files.list ('../doc', function (data) { res.render ('list', data) });
+    files.list ('', function (data) { res.render ('list', data) });
 });
 
 // New view
@@ -36,7 +36,7 @@ app.get('/new', function(req, res) {
 // Doc pages
 app.get('/:doc', function(req, res){
     doc = req.params.doc;
-    files.wiki(doc, function(stdout) {
+    files.format(doc, function(stdout) {
         res.render('doc',{path:doc, text:stdout});    
     });
 });
@@ -50,7 +50,7 @@ app.get('/:doc/edit', function(req, res) {
 });
 
 // Save view
-app.post('/save', function(req, res){
+app.post('/edit', function(req, res){
     path = req.body.path;
     text = req.body.text.replace(/\r/gm,'');
     if (req.param('cancel')) return res.redirect ('/'+path); 
