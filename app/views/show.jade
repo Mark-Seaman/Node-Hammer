@@ -1,20 +1,22 @@
 extends layout
 
 block title
-  title Doc Viewer - #{path}
+  title Book - #{doc}
 
 block content
+  h1 #{app}
+
   #links
     p 
-      a(href='/') List 
+      a(href='/#{app}/') List 
       t= ' * '
-      a(href='/#{path}/edit') Edit
+      a(href='/#{app}/#{doc}/edit') Edit
     hr
 
   #title
     div(style='margin:3em') 
       p
-        doc= 'file: /home/seaman/Code/hammer/notes/doc/' + path
+        doc= 'file: /home/seaman/Code/hammer/notes/doc/'+ app + '/' + doc
 
   #results
     div(style='margin:3em;border:solid 1px') 

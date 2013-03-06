@@ -1,26 +1,24 @@
-var fs      = require('fs');
-var exec       = require('child_process').exec;
+var fs    = require('fs');
+var exec  = require('child_process').exec;
 
 
 // List the files and perform an action
-var list_files = function (doc, action) {
-    exec('hammer-list '+doc, function(error,stdout) {
-        if (error) stdout = ['No directory'];
-        action({ files:stdout.split('\n') });
+var list_files = function (app, action) {
+    exec('hammer-list '+app, function(error,stdout) {
+        action({ app:app, files:stdout.split('\n').slice(0,-1) });
     });   
 }
 
 // Read the file and perform an action
-var read_file = function (path, action) {
-    fs.readFile(path, 'utf8', function(err, data) {
-        if (err) data = 'No file found';
-        action({ id:path, data:data });
-    });
+var read_file = function (app, doc, action) {
+    exec('hammer-read ../doc/'+app+'/'+doc, function(error,stdout) {
+        action(stdout);
+    });   
 }
 
 // Read the file and perform an action
-var write_file = function (doc, text, action) {
-    p = exec('hammer-edit ../doc/'+doc, function(error,stdout) {
+var write_file = function (app, doc, text, action) {
+    p = exec('hammer-edit ../doc/'+app+'/'+doc, function(error,stdout) {
         action(stdout);
     })
     p.stdin.write(text);
@@ -28,8 +26,8 @@ var write_file = function (doc, text, action) {
 }
 
 // Format a wiki page
-var format_file = function(doc, action) {
-    exec('hammer-show ../doc/'+doc, function(error,stdout) {
+var format_file = function(app, doc, action) {
+    exec('hammer-show ../doc/'+app+'/'+doc, function(error,stdout) {
         action(stdout);
     });
 }

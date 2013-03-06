@@ -25,43 +25,55 @@ app.get('/views/*?:file?', function(req, res){
 
 // List view
 app.get('/', function(req, res){
-    files.list ('', function (data) { res.render ('list', data) });
+    res.redirect ('/notes/SimpleApps'); 
+});
+
+// List view
+app.get('/:app/', function(req, res){
+    app = req.params.app;
+    files.list (app, function (data) { res.render ('list', data) });
 });
 
 // New view
-app.get('/new', function(req, res) {
-    res.render ('edit', {path:'', text:''} ); 
+app.get('/:app/new', function(req, res) {
+    app = req.params.app;
+    res.render ('edit', {app:app, path:'', text:''} ); 
 });
 
 // Doc pages
-app.get('/:doc', function(req, res){
+app.get('/:app/:doc', function(req, res){
     doc = req.params.doc;
-    files.format(doc, function(stdout) {
-        res.render('doc',{path:doc, text:stdout});    
+    app = req.params.app;
+    files.format(app, doc, function(text) {
+        res.render('show',{app:app, path:doc, text:text});    
     });
 });
 
 // Edit view
-app.get('/:doc/edit', function(req, res) {
+app.get('/:app/:doc/edit', function(req, res) {
+    app = req.params.app;
     path = req.params.doc;
-    files.read ('../doc/'+path, function (data) { 
+    files.read (app, path, function (data) { 
         res.render ('edit', {path:path, text:data.data} ); 
     });
 });
 
 // Save view
-app.post('/edit', function(req, res){
+app.post('/:app/edit', function(req, res){
+    app = req.params.app;
     path = req.body.path;
     text = req.body.text.replace(/\r/gm,'');
     if (req.param('cancel')) return res.redirect ('/'+path); 
-    files.write ('../doc/'+path, text, function () {
+    files.write (app, path, text, function () {
         res.redirect ('/'+path); 
     });
 });
 
 // Home page
 app.get('*', function(req, res){
-    res.redirect('/Home');    
+    files.format('.', 'FileNotFound', function(text) {
+        res.render('show',{app:'.', doc:'Error', text:text});    
+    });
 });
 
 // Listen on 8080

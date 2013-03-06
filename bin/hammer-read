@@ -1,0 +1,5 @@
+#!/bin/bash
+# Read the text for a specific document
+
+cat  $1
+

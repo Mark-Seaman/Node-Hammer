@@ -4,5 +4,5 @@
 cd $p/doc
 [[ "$1" == "" ]] && ls && exit 0
 
-find | grep -i "$1" |sed 's/^..//'
+find | grep -i "$1" |sed "s/^\.\/$1\///" | sed '1d' | sort
 
