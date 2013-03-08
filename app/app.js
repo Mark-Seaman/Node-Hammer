@@ -40,17 +40,9 @@ app.get('/:app/new', function(req, res) {
     res.render ('edit', {app:app, path:'', text:''} ); 
 });
 
-// Doc pages
-app.get('/:app/:doc', function(req, res){
-    doc = req.params.doc;
-    app = req.params.app;
-    files.format(app, doc, function(text) {
-        res.render('show',{app:app, path:doc, text:text});    
-    });
-});
 
 // Edit view
-app.get('/:app/:doc/edit', function(req, res) {
+app.get('/:app/*:doc?/edit', function(req, res) {
     app = req.params.app;
     doc = req.params.doc;
     files.read (app, doc, function (text) { 
@@ -69,11 +61,20 @@ app.post('/:app/edit', function(req, res){
     });
 });
 
+// Doc pages
+app.get('/:app/*:doc?', function(req, res){
+    doc = req.params.doc;
+    app = req.params.app;
+    files.format(app, doc, 
+                 function(text) { res.render('show',{app:app, path:doc, text:text}) },   
+                 function()     { res.redirect ('/'+app+'/'+doc+'/edit')}
+                )
+
+});
+
 // Home page
 app.get('*', function(req, res){
-    files.format('.', 'FileNotFound', function(text) {
-        res.render('show',{app:'.', doc:'Error', text:text});    
-    });
+    res.redirect ('/notes/SimpleApps')
 });
 
 // Listen on 8080

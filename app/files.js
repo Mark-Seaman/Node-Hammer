@@ -26,10 +26,18 @@ var write_file = function (app, doc, text, action) {
 }
 
 // Format a wiki page
-var format_file = function(app, doc, action) {
-    exec('hammer-show ../doc/'+app+'/'+doc, function(error,stdout) {
-        action(stdout);
-    });
+var format_file = function(app, doc, show, create) {
+    path = '../doc/'+app+'/'+doc
+    fs.exists(path, function(exists) {
+        if (exists) { 
+            exec('hammer-show '+path, function(error,stdout) { 
+                show(stdout) 
+            })
+        }
+        else {
+           create()
+        }
+    })
 }
 
 exports.list    = list_files;
