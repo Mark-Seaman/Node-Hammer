@@ -3,14 +3,6 @@
 
 export p=~/Projects/hammer/django-hammer/
 
-# Path
-export PATH=\
-$p/bin:\
-$PYTHONPATH:\
-/usr/bin:\
-/bin:\
-.
-
 figlet 'HAMMER - Django style'
 
 cd $p

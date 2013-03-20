@@ -1,0 +1,44 @@
+* Server Tricks *                 -*-muse-*-
+Developing a web application requires 50 tricks.
+
+There are several tricks that you need to do to get your project done.
+
+
+**create project script commands**
+
+create a new project directory then subdirectories for bin, app, doc
+
+add bin to your shell path
+
+create script commands to manipulate your project files
+ * hammer-dj-project   -- setup the virtual environment and path
+ * alias dj='python manage.py'
+
+
+**create new app**
+ 
+hammer-dj-new       -- define starting files in app
+
+edit settings.py
+ * hook up sqlite3 as database
+ * add doc, systest as installed apps
+
+run unit tests
+ * dj test
+
+**server start/stop**
+
+dj runserver
+firefox localhost:8000
+
+
+**host a web app**
+
+
+**program files**
+
+
+**url routing**
+
+
+See also AllTricks

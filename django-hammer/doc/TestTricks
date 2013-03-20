@@ -1,0 +1,46 @@
+* Test Tricks *                 -*-muse-*-
+Developing a web application requires 50 tricks.
+
+There are several tricks that you need to do to get your project done.
+
+
+**create unit test**
+
+create a new project directory then subdirectories for bin, app, doc
+
+add bin to your shell path
+
+create script commands to manipulate your project files
+ * hammer-dj-project   -- setup the virtual environment and path
+ * alias dj='python manage.py'
+
+**create system test**
+
+create a python script:
+
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get('http://google.com')
+print browser.title
+browser.quit()
+
+
+**run unit tests**
+ * dj test
+
+**server start/stop**
+
+dj runserver
+firefox localhost:8000
+
+
+**host a web app**
+
+
+**program files**
+
+
+**url routing**
+
+
+See also AllTricks

@@ -30,6 +30,8 @@ Process:
 Developing a web application requires 50 tricks. You will need to develop functionality in
 all of the following areas.
 
+AllTricks
+
  * [[ServerTricks][server]]
  * [[DatabaseTricks][database]]
  * [[ViewsTricks][views]]
