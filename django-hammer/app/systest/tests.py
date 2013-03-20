@@ -1,16 +1,24 @@
 """
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
+Test to make sure that this application is running properly.
 """
 
-from django.test import TestCase
+from django.test import LiveServerTestCase
+from selenium import webdriver
 
+class AppRunsTest(LiveServerTestCase):
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+        def setUp(self):
+            self.browser = webdriver.Firefox()
+            self.browser.implicitly_wait(3)
+
+        def tearDown(self):
+            self.browser.quit()
+
+        def test_is_alive(self):
+            self.browser.get(self.live_server_url + '/')
+
+            # She sees the familiar 'Django administration' heading
+            #body = self.browser.find_element_by_tag_name('body')
+            #self.assertIn('Django administration', body.text)
+
+            
