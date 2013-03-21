@@ -15,8 +15,8 @@ Features:
     Model/View/Template architecture
     Data stored in text files
     Built with 50 tricks
-    6 operations
-    Command injection
+    6 operations for each view
+    Command injection for custom actions
     ACL controls 
 
 Process:
@@ -30,18 +30,7 @@ Process:
 Developing a web application requires 50 tricks. You will need to develop functionality in
 all of the following areas.
 
-AllTricks
-
- * [[ServerTricks][server]]
- * [[DatabaseTricks][database]]
- * [[ViewsTricks][views]]
- * [[FormattingTricks][formatting]]
- * [[PagesTricks][pages]]
- * [[ScriptingTricks][scripting]]
- * [[UsersTricks][users]]
- * [[DownloadTricks][download]]
- * [[FilesTricks][files]]
- * [[ComputersTricks][computers]]
+    AllTricks
 
 
 **Language comparison**

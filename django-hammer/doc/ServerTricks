@@ -1,8 +1,10 @@
 * Server Tricks *                 -*-muse-*-
+
 Developing a web application requires 50 tricks.
 
-There are several tricks that you need to do to get your project done.
+There are several server tricks that you need to do to get your project done.
 
+_____________________________________________________________________________
 
 **create project script commands**
 
@@ -10,33 +12,60 @@ create a new project directory then subdirectories for bin, app, doc
 
 add bin to your shell path
 
-create script commands to manipulate your project files
- * hammer-dj-project   -- setup the virtual environment and path
- * alias dj='python manage.py'
+setup bin directory to hold scripts for manipulating your project
 
+create script commands to manipulate your project files
+ * hammer-dj-project            # setup the virtual environment and path
+ * alias dj='python manage.py'  # Execute django manage command
+
+_____________________________________________________________________________
 
 **create new app**
  
-hammer-dj-new       -- define starting files in app
+hammer-dj-new                   # define starting files in app
 
 edit settings.py
  * hook up sqlite3 as database
  * add doc, systest as installed apps
 
-run unit tests
- * dj test
+_____________________________________________________________________________
+
+**add a new data type**
+
+Django defines support for components (called apps).  You start by creating a new  Django app. Then
+you modify the models.py file. Include a simple definition of your data type.
+
+Example:
+    dj startapp doc
+    add doc as installed app in app/settings.py
+
+edit doc/models.py
+
+    from django.db          import models
+    from django.forms       import ModelForm
+    
+    class Note (models.Model):
+        path  = models.CharField (max_length=200)
+        body  = models.TextField ()
+     
+    class NoteForm (ModelForm):
+        class Meta:
+            model=Note
+
+dj syncdb    # This creates the correct DB table
+    
+_____________________________________________________________________________
 
 **server start/stop**
 
 dj runserver
 firefox localhost:8000
 
+_____________________________________________________________________________
 
 **host a web app**
 
-
-**program files**
-
+_____________________________________________________________________________
 
 **url routing**
 

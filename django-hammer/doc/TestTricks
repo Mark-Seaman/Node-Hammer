@@ -1,46 +1,113 @@
 * Test Tricks *                 -*-muse-*-
+
 Developing a web application requires 50 tricks.
 
-There are several tricks that you need to do to get your project done.
+Here are several test tricks
 
+_____________________________________________________________________________
 
-**create unit test**
+**run unit tests**
+ * dj test              # run all of the django tests
+ * dj test doc          # run just the doc tests (in doc/test.py)
 
-create a new project directory then subdirectories for bin, app, doc
+_____________________________________________________________________________
 
-add bin to your shell path
+**create a new unit test** 
 
-create script commands to manipulate your project files
- * hammer-dj-project   -- setup the virtual environment and path
- * alias dj='python manage.py'
+create a python script  (eg. doc/tests.py):
+
+    from django.test  import TestCase
+
+    class AppUnitTest(TestCase):
+
+        def test_list_joining (self):
+
+            self.assertEqual([1,2,3], [1]+[2]+[3])
+            self.Fail ('Force a failure to check the test')
+
+_____________________________________________________________________________
+
+**check the html content** 
+
+You can get the HTML content directly from the views.  This will test out the URL routing of your
+views.
+
+create a python script  (eg. doc/tests.py):
+
+    from django.http            import HttpRequest, HttpResponse
+    from django.template.loader import render_to_string
+    from django.test            import TestCase
+    from os                     import listdir
+    from doc.views              import home
+
+    class ViewContentTest(LiveServerTestCase):
+
+        def test_renders_correct_template(self):
+
+            d = listdir('doc')
+            request = HttpRequest()
+            response = home(request)
+            expected = render_to_string('list.html',{ 'directory': d })
+            self.assertEqual(response.content, expected)
+
+_____________________________________________________________________________
+
+**check for strings in the html** 
+
+You can get the HTML content directly from the views.
+
+create a python script  (eg. doc/tests.py):
+
+    from django.http            import HttpRequest, HttpResponse
+    from django.template.loader import render_to_string
+    from django.test            import TestCase
+    from os                     import listdir
+    from doc.views              import home
+    
+    class AppUnitTest(TestCase):
+   
+        def test_lists_files(self):
+
+            request = HttpRequest()
+            response = home(request)
+            expected = render_to_string('list.html',{ 'directory': listdir('doc') })
+            for t in ['ServerTricks','TestTricks','AllTricks','Home']:
+                    self.assertIn(t, expected)
+
+_____________________________________________________________________________
 
 **create system test**
 
-create a python script:
+System tests are slow but test the full system end-to-end.  They start up a browser and then load
+web pages.  Use them sparingly where you want to spot check your finished app.
 
-from selenium import webdriver
-browser = webdriver.Firefox()
-browser.get('http://google.com')
-print browser.title
-browser.quit()
+create a python script  (eg. systest/getPage.py):
 
+    from selenium import webdriver
+    browser = webdriver.Firefox()
+    browser.get('http://google.com')
+    print browser.title
+    browser.quit()
 
-**run unit tests**
- * dj test
+_____________________________________________________________________________
 
-**server start/stop**
+**create a new live test**
 
-dj runserver
-firefox localhost:8000
+The LiveTest will let you test your system by running the web server for you.
 
+create a python script  (eg. systest/tests.py):
 
-**host a web app**
+    from django.test            import LiveServerTestCase
+    from selenium               import webdriver
 
+    class AppRunsTest(LiveServerTestCase):
+    
+       self.browser = webdriver.Firefox()
+       self.browser.implicitly_wait(3)
+       self.browser.get(self.live_server_url + '/')
+       self.assertEqual('Hammer Django', self.browser.title)
 
-**program files**
-
-
-**url routing**
+_____________________________________________________________________________
 
 
 See also AllTricks

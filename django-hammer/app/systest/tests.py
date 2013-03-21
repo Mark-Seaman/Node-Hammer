@@ -34,13 +34,3 @@ class AppRunsTest(LiveServerTestCase):
             for t in ['ServerTricks','TestTricks','AllTricks','Home']:
                     self.assertIn(t, body.text)
 
-        # Make sure the correct template is used
-        def test_renders_correct_template(self):
-
-            d = listdir('/home/seaman/Projects/hammer/django-hammer/doc')
-            request = HttpRequest()
-            response = home(request)
-            expected = render_to_string('list.html',{ 'directory': d })
-
-            self.browser.get(self.live_server_url + '/')
-            self.assertEqual(response.content, expected)

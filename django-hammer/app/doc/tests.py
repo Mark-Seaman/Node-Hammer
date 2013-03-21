@@ -23,7 +23,16 @@ class AppUnitTest(TestCase):
 
             request = HttpRequest()
             response = home(request)
-            #print repr(response.content)
-
             expected = render_to_string('list.html',{ 'directory': file_list() })
             self.assertEqual(response.content, expected)
+            #print repr(response.content)
+            
+        # Make sure the correct template is used
+        def test_renders_correct_template(self):
+
+            request = HttpRequest()
+            response = home(request)
+            expected = render_to_string('list.html',{ 'directory': file_list() })
+            for t in ['ServerTricks','TestTricks','AllTricks','Home']:
+                    self.assertIn(t, expected)
+
