@@ -84,7 +84,7 @@ SECRET_KEY = 'egi@i4rvv)tzcnz*n6h&amp;&amp;x=^s&amp;13(tl0)@ehp!7i0du$qs(2&amp;*
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,9 +103,7 @@ ROOT_URLCONF = 'app.urls'
 WSGI_APPLICATION = 'app.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    '/home/seaman/Projects/hammer/django-hammer/app/templates',
 )
 
 INSTALLED_APPS = (
