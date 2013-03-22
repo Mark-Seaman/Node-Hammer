@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Hammer Django</title>
+  </head>
+  <body>
+  <h1>Hammer Technology</h1>
+  <h2>list view</h2>
+  Topics
+  <ul>
+      {% for f in directory %}
+          <li><a href="{{ f }}">{{ f }}</a></li>
+      {% endfor %}
+  </ul>
+  Other pages
+  <ul>
+      <a href='list'>List</a>
+      <a href="Home">Home topic</a>
+  </ul>
+  </body>
+</html>
