@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hammer Technology</title>
-</head>
-<body>
-<h1>Hammer Technology</h1>
-<p>When you have a hammer, the whole world looks like a nail.</p>
-<p>Get the biggest hammer you can find.</p>
+{% extends "layout.html" %}
 
-<ul>
-    <a href='list'>List</a>
-    <a href="Home">Home topic</a>
-</ul>
-</body>
-</html>
+
+{% block content %}
+    <div style="margin: 6em">
+        <h1>Welcome to Hammer Technology</h1>
+        <p>When you have a hammer, the whole world looks like a nail.</p>
+        <p>Get the biggest hammer you can find.</p>
+    </div>
+{% endblock %}

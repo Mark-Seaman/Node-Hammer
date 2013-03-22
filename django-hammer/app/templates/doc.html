@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Doc -- {{ title }}</title>
-</head>
-<body>
-<h1>Hammer Technology</h1>
-<h2>{{ title }}</h2>
-{% autoescape off %}
-{{ text }}
-{% endautoescape %}
-<ul>
-    <a href='list'>List</a>
-    <a href="/">Home</a>
-</ul>
-</body>
-</html>
+{% extends "layout.html" %}
+
+
+{% block content %}
+    {% autoescape off %}
+        {{ text }}
+    {% endautoescape %}
+{% endblock %}

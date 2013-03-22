@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hammer Technology</title>
+    <link href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet" />
+    <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap.min.js"></script>
+</head>
+<body>
+
+{% block banner %}
+    <div style="margin: 6em">
+        <img src="{{ STATIC_URL }}Hammer.png" alt="Hammer Rocks!" />
+         <hr/>
+        {% block navbar %}
+            <p>
+                <a href="/">Home</a>&nbsp;&nbsp;&nbsp;
+                <a href='list'>List</a>
+            </p>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
