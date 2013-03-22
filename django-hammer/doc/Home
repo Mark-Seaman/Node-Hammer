@@ -1,44 +1,9 @@
-* Hammer Project *                 -*-muse-*-
+* Welcome to Hammer Technology *                 -*-muse-*-
+ 
+When you have a hammer, the whole world looks like a nail.
 
-**Project Goals**
+       
+Get the biggest hammer you can find.
 
-The Hammer Project has a the following goals:
- * Create a powerful but simple web application
- * Use multiple languages for side-by-side comparison
- * Provide a catalog of technical tricks for others
-
-
-**Web application**
-
-Features:
-    Web application
-    Model/View/Template architecture
-    Data stored in text files
-    Built with 50 tricks
-    6 operations for each view
-    Command injection for custom actions
-    ACL controls 
-
-Process:
-    Build incrementally
-    Functional tests before code
-    Outline of product phases
-
-
-**Catalog of tricks** 
-
-Developing a web application requires 50 tricks. You will need to develop functionality in
-all of the following areas.
-
-    AllTricks
-
-
-**Language comparison**
-
-The hammer project implements the same functionality in multiple languages and frameworks. This way
-it is possible to to a comparison of how each feature is implemented in the different languages.
-
- * Django
- * Pyramid
- * Node
+Introducing  HammerProject
 

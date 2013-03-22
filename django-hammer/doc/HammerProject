@@ -1,0 +1,10 @@
+* Hammer Project *                 -*-muse-*-
+
+**Project Goals**
+
+The Hammer Project has a the following goals:
+ * Create a powerful but simple web application
+ * Use multiple languages for side-by-side comparison
+ * Provide a catalog of technical tricks for others
+
+See also WebApplication, CatalogOfTricks, LanguageComparison

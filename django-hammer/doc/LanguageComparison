@@ -1,0 +1,10 @@
+* Language comparison *            -*-muse-*-
+
+The hammer project implements the same functionality in multiple languages and frameworks. This 
+way it is possible to to a comparison of how each feature is implemented in the different 
+languages.
+
+ * Django
+ * Pyramid
+ * Node
+

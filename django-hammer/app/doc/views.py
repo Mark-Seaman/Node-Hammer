@@ -4,7 +4,7 @@ from os                 import listdir
 from subprocess         import Popen,PIPE
 
 def home(request):
-    return render (request, 'index.html')
+    return doc(request, 'Home')
 
 def list(request):
     d = listdir('/home/seaman/Projects/hammer/django-hammer/doc')
