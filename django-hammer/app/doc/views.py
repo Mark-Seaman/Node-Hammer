@@ -4,6 +4,7 @@ from os                 import listdir
 
 from models             import *
 
+file_not_found =  "<blockquote>File not found.\nPlease check the name.</blockquote>" 
 
 def home(request):
     '''
@@ -24,7 +25,11 @@ def doc(request,title):
     '''
     Render the doc view
     '''
-    return render(request, 'doc.html', { 'title': title, 'text': format_doc(title)})
+    if is_doc(title):
+        return render(request, 'doc.html', {'title': title, 'text': format_doc(title)})
+    else:
+        return  HttpResponseRedirect(title+'/edit')
+        #return render(request, 'doc.html', {'title': title, 'text': file_not_found})
 
 
 def edit_form (request, title=None):
@@ -32,12 +37,13 @@ def edit_form (request, title=None):
     Create a form for editing the object details
     '''
     if request.method == 'POST':
+        form = NoteForm(request.POST)
         if request.POST.get('cancel', None):
+            title = form.data['path']
             if not title:
                 title = 'Home'
             return HttpResponseRedirect(title) 
         else:
-            form = NoteForm(request.POST)
             if form.is_valid():
                 title = form.cleaned_data['path']
                 write_doc(title, form.cleaned_data['body'])
@@ -46,7 +52,8 @@ def edit_form (request, title=None):
         note =  Note()
         if  title:
             note.path = title
-            note.body = read_doc(title)
+            if is_doc(title):
+                note.body = read_doc(title)
         form =  NoteForm(instance=note)
     data =  { 'form': form, 'title': title  }
     return render(request, 'edit.html', data)

@@ -1,6 +1,7 @@
 from django.db          import models
 from django.forms       import ModelForm
 from subprocess         import Popen,PIPE
+from os.path            import exists
 
 class Note (models.Model):
     '''
@@ -23,6 +24,13 @@ def do_command(cmd):
     Run the command as a process and capture stdout & print it
     '''
     return  Popen(cmd.split(),stdout=PIPE).stdout.read()
+
+
+def is_doc(title):
+    '''
+    Look for the document
+    '''
+    return exists('../doc/'+title)
 
 
 def format_doc(title):
