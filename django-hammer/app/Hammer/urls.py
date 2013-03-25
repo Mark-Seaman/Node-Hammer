@@ -8,12 +8,17 @@ static_dir = {'document_root': '/home/seaman/Projects/hammer/django-hammer/app/s
 
 urlpatterns = patterns('',
 
+                       # static files
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', static_dir),
 
-                       url(r'^$', 'doc.views.home', name='home'),
-                       url(r'^list$', 'doc.views.list', name='list'),
-                       url(r'^(?P<title>\w+)$', 'doc.views.doc', name='doc'),
+                       # doc views
+                       url(r'^$',                   'doc.views.home'),
+                       url(r'^list$',               'doc.views.list'),
+                       url(r'^add$',                'doc.views.add'),
+                       url(r'^(?P<title>\w+)$',     'doc.views.doc'),
+                       url(r'^(?P<title>\w+)/edit$', 'doc.views.edit'),
 
+                       # admin
                        # url(r'^admin/', include(admin.site.urls)),
 
 )
