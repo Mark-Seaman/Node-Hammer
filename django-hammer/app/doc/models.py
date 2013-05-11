@@ -3,6 +3,9 @@ from django.forms       import ModelForm
 from subprocess         import Popen,PIPE
 from os.path            import exists
 
+doc_path = '../doc/'
+
+
 class Note (models.Model):
     '''
     Note data model
@@ -30,27 +33,27 @@ def is_doc(title):
     '''
     Look for the document
     '''
-    return exists('../doc/'+title)
+    return exists(doc_path + title)
 
 
 def format_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    return do_command('wiki-html-content ../doc/'+title)
+    return do_command('wiki-html-content ' + doc_path + title)
 
 
 def read_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    return open('../doc/'+title).read()
+    return open(doc_path + title).read()
 
 
 def write_doc(title,body):
     '''
     Save the document file
     '''
-    return  open('../doc/'+title, 'wt').write(body)
+    return  open(doc_path + title, 'wt').write(body)
 
 
