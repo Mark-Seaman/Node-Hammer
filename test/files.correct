@@ -629,9 +629,12 @@
 ./wiki-html-content.py
 ./run
 .
+./git.out
+./git.correct
 ./docs.tst
 ./files.tst
 ./files.out
 ./docs.out
 ./docs.correct
+./git.tst
 ./files.correct
