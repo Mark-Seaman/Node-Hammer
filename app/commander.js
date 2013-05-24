@@ -56,16 +56,26 @@ app.post('/:app/edit', function(req, res){
     });
 });
 
+// Execute pages
+app.get('/:app/*:doc?/exec', function(req, res){
+    doc = req.params.doc;
+    app = req.params.app;
+    files.execute(app, doc, 
+                 function(text) { res.render('cmd',{app:app, path:doc, text:text}) },   
+                 function()     { res.send ('Exec Error:'+app+','+doc)}
+                )
+});
+
 // Doc pages
 app.get('/:app/*:doc?', function(req, res){
     doc = req.params.doc;
     app = req.params.app;
     files.format(app, doc, 
                  function(text) { res.render('show',{app:app, path:doc, text:text}) },   
-                 function()     { res.send ('Error')}
+                 function()     { res.send ('Doc Error')}
                 )
-
 });
+
 
 // Home page
 app.get('*', function(req, res){

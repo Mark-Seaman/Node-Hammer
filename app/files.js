@@ -35,7 +35,7 @@ var format_file = function(app, doc, show, create) {
             })
         }
         else {
-           create()
+            show("PATH:"+path+'   Text:Error')
         }
     })
 }
@@ -45,12 +45,12 @@ var execute_file = function(app, doc, show, create) {
     path = '../doc/'+app+'/'+doc
     fs.exists(path, function(exists) {
         if (exists) { 
-            exec('hammer-show '+path, function(error,stdout) { 
+            exec(path, function(error,stdout) { 
                 show(stdout) 
             })
         }
         else {
-           create()
+            show("PATH:"+path+'   Text:Error')
         }
     })
 }
