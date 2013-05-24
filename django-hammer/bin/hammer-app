@@ -1,9 +1,0 @@
-#!/bin/bash
-# Start the django server
-
-cd $p/app
-killall runserver
-
-nohup python ./manage.py runserver > app.log &
-
-w localhost:8000
