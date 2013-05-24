@@ -11,6 +11,7 @@
 ./views/jquery-latest.js
 ./views/layout.jade
 ./views/favicon.ico
+./commander.js
 ./files.js
 ./app.js
 ./node_modules
@@ -611,13 +612,13 @@
 ./show
 ./tfail
 ./hammer-edit
-./hammer-project
+./project
 ./e
 ./trun
 ./hammer-show
 ./rbg
 ./tlist
-./hammer-exe
+./exe
 ./hammer-read
 ./tdiff
 ./commit
@@ -625,6 +626,7 @@
 ./w
 ./tout
 ./deploy
+./hammer-execute
 ./tst
 ./wiki-html-content.py
 ./run

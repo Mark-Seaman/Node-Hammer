@@ -1,4 +1,6 @@
 .
+./cmd
+./cmd/Home
 ./FileNotFound
 ./notes
 ./notes/FormattingRules
