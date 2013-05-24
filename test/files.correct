@@ -620,14 +620,14 @@
 ./hammer-exe
 ./hammer-read
 ./tdiff
-./hammer-deploy
+./commit
 ./hammer-list
 ./w
 ./tout
+./deploy
 ./tst
 ./wiki-html-content.py
 ./run
-./hammer-commit
 .
 ./docs.tst
 ./files.tst
