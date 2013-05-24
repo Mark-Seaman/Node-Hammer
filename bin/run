@@ -2,5 +2,5 @@
 # Show the pipe scan home page
 echo 'Show the app in a browser'
 
-$p/app/run
-
+echo "Running $*"
+nohup node $p/app/commander.js  1> /dev/null 2>&1 &

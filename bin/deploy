@@ -7,4 +7,4 @@ cd $p                               &&
 pwd                                 &&
 rsync -auv $p/ $joy:Projects        &&
 scp bin/joy-bashrc $joy:.bashrc     &&
-ssh $joy '. .bashrc && hammer-app'
+ssh $joy '. .bashrc && Projects/bin/run'
