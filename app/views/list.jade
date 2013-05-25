@@ -1,16 +1,16 @@
 extends layout
 
 block title
-  title #{app} List
+  title List
 
 block content
     p 
-      a(href='/#{app}/new') Add
+      a(href='/new') Add
     hr  
-    h1  #{app} List
+    h1  List
     ul
       - for (var id in files)
         - var f = files[id]
           li
-            a(href='/#{app}/#{f}') #{f}
+            a(href='/#{f}') #{f}
         

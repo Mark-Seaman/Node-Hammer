@@ -1,26 +1,26 @@
 extends layout
 
 block title
-  title Book - #{doc}
+  title  #{doc}
 
 block content
   h1 Commander
 
   #links
     p 
-      a(href='/#{app}/') List 
+      a(href='/') List 
       t= ' * '
-      a(href='/#{app}/#{doc}/edit') Edit
+      a(href='/#{doc}/edit') Edit
       t= ' * '
-      a(href='/#{app}/#{doc}/exec') Execute
+      a(href='/#{doc}/exec') Execute
       t= ' * '
-      a(href='/#{app}/new') Add
+      a(href='/new') Add
     hr
 
   #title
     div(style='margin:3em') 
       p
-        doc= 'file: '+ app + '/' + doc
+        doc= doc
 
   #results
     div(style='margin:3em;border:solid 1px') 

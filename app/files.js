@@ -3,9 +3,9 @@ var exec  = require('child_process').exec;
 
 
 // List the files and perform an action
-var list_files = function (app, action) {
-    exec('hammer-list '+app, function(error,stdout) {
-        action({ app:app, files:stdout.split('\n').slice(0,-1) });
+var list_files = function (action) {
+    exec('hammer-list .', function(error,stdout) {
+        action({files:stdout.split('\n').slice(0,-1) });
     });   
 }
 
@@ -41,7 +41,7 @@ var format_file = function(doc, show, create) {
 }
 
 // Execute a script and return the result
-var execute_file = function(app, doc, show, create) {
+var execute_file = function(doc, show, create) {
     path = '../doc/'+doc
     fs.exists(path, function(exists) {
         if (exists) { 

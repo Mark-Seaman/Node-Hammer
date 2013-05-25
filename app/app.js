@@ -24,9 +24,8 @@ app.get('/views/*?:file?', function(req, res){
 });
 
 // List view
-app.get('/:app/', function(req, res){
-    app = req.params.app;
-    files.list (app, function (data) { res.render ('list', data) });
+app.get('/', function(req, res){
+    files.list (function (data) { res.render ('list', data) });
 });
 
 // New view
@@ -57,12 +56,11 @@ app.post('/:app/edit', function(req, res){
 });
 
 // Execute pages
-app.get('/:app/*:doc?/exec', function(req, res){
+app.get('/*:doc?/exec', function(req, res){
     doc = req.params.doc;
-    app = req.params.app;
-    files.execute(app, doc, 
-                 function(text) { res.render('cmd',{app:app, path:doc, text:text}) },   
-                 function()     { res.send ('Exec Error:'+app+','+doc)}
+    files.execute(doc, 
+                 function(text) { res.render('cmd',{path:doc, text:text}) },   
+                 function()     { res.send ('Exec Error:'+doc)}
                 )
 });
 
