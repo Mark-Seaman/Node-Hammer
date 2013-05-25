@@ -24,11 +24,6 @@ app.get('/views/*?:file?', function(req, res){
 });
 
 // List view
-app.get('/', function(req, res){
-    res.redirect ('/notes/SimpleApps'); 
-});
-
-// List view
 app.get('/:app/', function(req, res){
     app = req.params.app;
     files.list (app, function (data) { res.render ('list', data) });
@@ -61,20 +56,30 @@ app.post('/:app/edit', function(req, res){
     });
 });
 
-// Doc pages
-app.get('/:app/*:doc?', function(req, res){
+// Execute pages
+app.get('/:app/*:doc?/exec', function(req, res){
     doc = req.params.doc;
     app = req.params.app;
-    files.format(app, doc, 
-                 function(text) { res.render('show',{app:app, path:doc, text:text}) },   
-                 function()     { res.redirect ('/'+app+'/'+doc+'/edit')}
+    files.execute(app, doc, 
+                 function(text) { res.render('cmd',{app:app, path:doc, text:text}) },   
+                 function()     { res.send ('Exec Error:'+app+','+doc)}
                 )
-
 });
+
+// Doc pages
+app.get('/*:doc?', function(req, res){
+    doc = req.params.doc;
+    files.format(doc, 
+                 function(text) { res.render('show',{doc:doc, text:text}) },   
+                 function()     { res.send ('Doc Error')}
+                )
+});
+
 
 // Home page
 app.get('*', function(req, res){
-    res.redirect ('/notes/SimpleApps')
+    console.log("Page:"+req.url)
+    res.redirect ('/Home')
 });
 
 // Listen on 8080

@@ -26,8 +26,8 @@ var write_file = function (app, doc, text, action) {
 }
 
 // Format a wiki page
-var format_file = function(app, doc, show, create) {
-    path = '../doc/'+app+'/'+doc
+var format_file = function(doc, show, create) {
+    path = '../doc/'+doc
     fs.exists(path, function(exists) {
         if (exists) { 
             exec('hammer-show '+path, function(error,stdout) { 
@@ -35,14 +35,14 @@ var format_file = function(app, doc, show, create) {
             })
         }
         else {
-            show("PATH:"+path+'   Text:Error')
+            show("PATH:"+path+'   Text:Format Error')
         }
     })
 }
 
 // Execute a script and return the result
 var execute_file = function(app, doc, show, create) {
-    path = '../doc/'+app+'/'+doc
+    path = '../doc/'+doc
     fs.exists(path, function(exists) {
         if (exists) { 
             exec(path, function(error,stdout) { 
@@ -50,7 +50,7 @@ var execute_file = function(app, doc, show, create) {
             })
         }
         else {
-            show("PATH:"+path+'   Text:Error')
+            show("PATH:"+path+'   Text:xxError')
         }
     })
 }
