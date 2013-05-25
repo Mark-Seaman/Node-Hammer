@@ -3,7 +3,6 @@
 ./README.md
 ./app.js
 ./files.js
-./run
 ./node_modules
 ./node_modules/.bin
 ./node_modules/.bin/jade
@@ -642,6 +641,7 @@
 ./mkexe
 ./hammer-read
 ./hammer-show
+./page
 ./tlike
 ./tshow
 ./tlist
