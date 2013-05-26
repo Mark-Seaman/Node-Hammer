@@ -1,5 +1,4 @@
 .
-./commander.js
 ./README.md
 ./app.js
 ./files.js
@@ -631,7 +630,6 @@
 ./views/favicon.ico
 ./views/bootstrap.min.js
 ./views/detail.jade
-./views/Hammer.png
 ./views/layout.jade
 .
 ./hammer-list
