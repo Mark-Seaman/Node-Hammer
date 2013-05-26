@@ -1,7 +1,12 @@
 #!/bin/bash
 # Return the wiki text from the requested file
 
-#Formatter is written in python
+# Handle directories
+[[ -d "$1" ]] && hammer-list $1 && exit 0
 
+# Handle missing page
+echo "Missing page $1"
+
+#Formatter is written in python
 python $p/bin/wiki-html-content.py $1
 

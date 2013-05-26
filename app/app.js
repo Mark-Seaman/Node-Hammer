@@ -23,15 +23,6 @@ app.get('/views/*?:file?', function(req, res){
     res.sendfile ('views/'+req.params.file);
 });
 
-// List view
-app.get('/', function(req, res){
-    files.list (function (data) { res.render ('list', data) });
-});
-
-// New view
-app.get('/new', function(req, res) {
-    res.render ('edit', {path:'', text:''} ); 
-});
 
 
 // Edit view
@@ -41,9 +32,7 @@ app.get('/*:doc?/edit', function(req, res) {
         res.render ('edit', {doc:doc, text:text} ); 
     });
 });
-
-// Save view
-app.post('/edit', function(req, res){
+app.post('/*:doc?/edit', function(req, res){
     doc = req.body.doc;
     text = req.body.text.replace(/\r/gm,'');
     if (req.param('cancel')) return res.redirect ('/'+doc); 
@@ -52,7 +41,12 @@ app.post('/edit', function(req, res){
     });
 });
 
-// Execute pages
+
+
+// Doc pages
+//app.get('/', function(req, res){
+//    files.list (function (data) { res.render ('list', data) });
+//});
 app.get('/*:doc?/exec', function(req, res){
     doc = req.params.doc;
     files.execute(doc, 
@@ -60,8 +54,6 @@ app.get('/*:doc?/exec', function(req, res){
                  function()     { res.send ('Exec Error:'+doc)}
                 )
 });
-
-// Doc pages
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
     files.format(doc, 
@@ -70,7 +62,9 @@ app.get('/*:doc?', function(req, res){
                 )
 });
 
-// Home page
+
+
+// Missing page
 app.get('*', function(req, res){
     console.log("Page:"+req.url)
     res.redirect ('/Home')

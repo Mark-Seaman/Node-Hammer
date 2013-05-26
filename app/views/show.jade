@@ -1,20 +1,14 @@
 extends layout
 
 block title
-  title Book - #{doc}
+  title  #{doc}
 
 block content
-  h1 Doc
-
   #links
     p 
       a(href='/') List 
       t= ' * '
       a(href='/#{doc}/edit') Edit
-      t= ' * '
-      a(href='/#{doc}/exec') Execute
-      t= ' * '
-      a(href='/new') Add
     hr
 
   #title

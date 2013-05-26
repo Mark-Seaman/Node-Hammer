@@ -28,16 +28,17 @@ var write_file = function (doc, text, action) {
 // Format a wiki page
 var format_file = function(doc, show, create) {
     path = '../doc/'+doc
-    fs.exists(path, function(exists) {
-        if (exists) { 
+    //fs.exists(path, function(exists) {
+    //    if (exists) { 
             exec('hammer-show '+path, function(error,stdout) { 
+                if (error) show ("xxx error:"+path)
                 show(stdout) 
             })
-        }
-        else {
-            show("PATH:"+path+'   Text:Format Error')
-        }
-    })
+    //     }
+    //     else {
+    //         show("PATH:"+path+'   Text:Format Error')
+    //     }
+    // })
 }
 
 // Execute a script and return the result
