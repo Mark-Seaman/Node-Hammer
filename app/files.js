@@ -10,15 +10,15 @@ var list_files = function (action) {
 }
 
 // Read the file and perform an action
-var read_file = function (app, doc, action) {
-    exec('hammer-read ../doc/'+app+'/'+doc, function(error,stdout) {
+var read_file = function (doc, action) {
+    exec('hammer-read ../doc/'+doc, function(error,stdout) {
         action(stdout);
     });   
 }
 
 // Read the file and perform an action
-var write_file = function (app, doc, text, action) {
-    p = exec('hammer-edit ../doc/'+app+'/'+doc, function(error,stdout) {
+var write_file = function (doc, text, action) {
+    p = exec('hammer-edit ../doc/'+doc, function(error,stdout) {
         action(stdout);
     })
     p.stdin.write(text);

@@ -29,29 +29,26 @@ app.get('/', function(req, res){
 });
 
 // New view
-app.get('/:app/new', function(req, res) {
-    app = req.params.app;
-    res.render ('edit', {app:app, path:'', text:''} ); 
+app.get('/new', function(req, res) {
+    res.render ('edit', {path:'', text:''} ); 
 });
 
 
 // Edit view
-app.get('/:app/*:doc?/edit', function(req, res) {
-    app = req.params.app;
+app.get('/*:doc?/edit', function(req, res) {
     doc = req.params.doc;
-    files.read (app, doc, function (text) { 
-        res.render ('edit', {app:app, doc:doc, text:text} ); 
+    files.read (doc, function (text) { 
+        res.render ('edit', {doc:doc, text:text} ); 
     });
 });
 
 // Save view
-app.post('/:app/edit', function(req, res){
-    app = req.params.app;
+app.post('/edit', function(req, res){
     doc = req.body.doc;
     text = req.body.text.replace(/\r/gm,'');
-    if (req.param('cancel')) return res.redirect ('/'+app+'/'+doc); 
-    files.write (app, doc, text, function () {
-        res.redirect ('/'+app+'/'+doc); 
+    if (req.param('cancel')) return res.redirect ('/'+doc); 
+    files.write (doc, text, function () {
+        res.redirect ('/'+doc); 
     });
 });
 
@@ -72,7 +69,6 @@ app.get('/*:doc?', function(req, res){
                  function()     { res.send ('Doc Error')}
                 )
 });
-
 
 // Home page
 app.get('*', function(req, res){

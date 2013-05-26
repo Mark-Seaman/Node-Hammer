@@ -6,7 +6,7 @@ block title
 block content
   h1 Edit: #{doc}
 
-  form(method="post", action="/#{app}/edit")
+  form(method="post", action="/#{doc}/edit")
     p Doc:
       input(name='doc', type='text', value='#{doc}') 
     p
