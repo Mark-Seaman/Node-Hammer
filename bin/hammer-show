@@ -8,5 +8,5 @@
 echo "Missing page $1"
 
 #Formatter is written in python
-python $p/bin/wiki-html-content.py $1
+hammer-wiki $1
 

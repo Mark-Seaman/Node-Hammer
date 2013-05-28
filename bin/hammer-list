@@ -10,5 +10,5 @@ do
 done > $t
 
 # Format the output
-python $p/bin/wiki-html-content.py $t
+hammer-wiki $t
 

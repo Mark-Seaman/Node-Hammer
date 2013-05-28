@@ -1,3 +1,4 @@
+#!/bin/bash
 # Wiki text formatter
 
 from os.path        import isfile, exists
