@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env python
 # Wiki text formatter
 
 from os.path        import isfile, exists
@@ -128,16 +128,13 @@ def get_title(text):
         return remove_muse(text[0]).rstrip()[2:][:-2]
     return 'No title'
 
-
-html_template = '''<div style="margin:6em">%s</div>'''
-
 # Create html file contents from the file
 def page_html(path):
     if isfile(path): 
         text = read_file(path)
     else:
         text = [ path, 'File not found, '+path ]
-    return html_template % convert_html(text)
+    return convert_html(text)
 
 # Format the file as HTML
 print page_html(argv[1])

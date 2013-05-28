@@ -47,13 +47,14 @@ app.post('/*:doc?/edit', function(req, res){
 //app.get('/', function(req, res){
 //    files.list (function (data) { res.render ('list', data) });
 //});
-app.get('/*:doc?/exec', function(req, res){
-    doc = req.params.doc;
-    files.execute(doc, 
-                 function(text) { res.render('cmd',{path:doc, text:text}) },   
-                 function()     { res.send ('Exec Error:'+doc)}
-                )
-});
+// app.get('/*:doc?/exec', function(req, res){
+//     doc = req.params.doc;
+//     files.execute(doc, 
+//                  function(text) { res.render('cmd',{path:doc, text:text}) },   
+//                  function()     { res.send ('Exec Error:'+doc)}
+//                 )
+// });
+
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
     files.format(doc, 

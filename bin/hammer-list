@@ -1,12 +1,17 @@
 #!/bin/bash
 # Find this text
 
+cd $p
 # Create a list of links
 t=/tmp/hammer-list$$
+
+#d=$1
+#[[ "$d" == "" ]] && d='.'
+
 ls $1 | 
 while read f 
 do
-    echo "[[$f]]"
+    echo "[[$f][$f]]"
 done > $t
 
 # Format the output
