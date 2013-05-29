@@ -1,0 +1,39 @@
+
+hammer-show
+Missing page Index
+
+hammer-show Home
+<br/> <h1>Hammer</h1>
+<br/> Welcome to Hammer Technology.
+<br/> 
+<br/> Learn the fastest way to create high-quality web applications.
+<br/> 
+<br/> If you think it you can build it.
+<br/> 
+<br/> 
+<ul><li> <a href="HammerTechnology">HammerTechnology</a>  -  dive into Hammer</li></ul>
+<br/> 
+<ul><li> <a href="DocViewer">DocViewer</a>  - learn how to use this viewer</li></ul>
+<br/> 
+<ul><li> <a href="Tricks">Tricks</a>  - learn the tricks you need</li></ul>
+<br/> 
+<ul><li> <a href="HammerProject">HammerProject</a>   - notes for developers</li></ul>
+<br/> 
+
+hammer-show book
+<br/>  <a href="book/Automate">Automate</a> 
+<br/>  <a href="book/Software">Software</a> 
+<br/>  <a href="book/Home">Home</a> 
+<br/> 
+
+hammer-show book/Home
+<br/> <h1>Books</h1>
+<br/> Welcome to Hammer Books.
+<br/> 
+<br/> Select any of the following books:
+<ul><li> <a href="Automate/AutomateYourWorld">How to automate your world</a> </li></ul>
+<ul><li> <a href="Software/Home">World Class Software</a> </li></ul>
+<br/> 
+
+hammer-show book/xxx
+Missing page book/xxx
