@@ -14,8 +14,8 @@ echo hammer-show book
 hammer-show book
 
 echo
-echo hammer-show book/Home
-hammer-show book/Home
+echo hammer-show book/Index
+hammer-show book/Index
 
 echo
 echo hammer-show book/xxx
