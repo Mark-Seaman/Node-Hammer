@@ -4,13 +4,24 @@
 
 cd $p
 d=$1
-[[ "$1" = "" ]] && d='Index'
+[[ "$1" = "" ]]         && 
+d='Index'
 
 # Handle directories
-[[ -d "doc/$d" ]] && hammer-list "$1" | hammer-wiki && exit 0
+[[ -d "doc/$d" ]]       && 
+if [[ -f "doc/$d/Index" ]] 
+then
+    hammer-wiki < "doc/$d/Index" && exit 0
+else
+    hammer-list "$1"        | 
+    hammer-wiki             && 
+    exit 0
+fi
 
 # Handle missing page
-[[ ! -f "doc/$d" ]] && echo "Missing page $d" && exit 0
+[[ ! -f "doc/$d" ]]     && 
+echo "Missing page $d"  && 
+exit 0
 
 #Formatter is written in python
 hammer-wiki < "doc/$d"

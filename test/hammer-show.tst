@@ -20,3 +20,7 @@ hammer-show book/Home
 echo
 echo hammer-show book/xxx
 hammer-show book/xxx
+
+echo
+echo hammer-show book/Automate
+hammer-show book/Automate
