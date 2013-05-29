@@ -1,19 +1,11 @@
-#!/bin/bash
-# Find this text
+#!/usr/bin/env python
+# List a directory as a page
 
-cd $p
-# Create a list of links
-t=/tmp/hammer-list$$
+from os.path import isfile, isdir, join, exists
+from os import remove, getcwd, system, listdir, environ
+from sys import argv
 
-#d=$1
-#[[ "$d" == "" ]] && d='.'
-
-ls doc/$1 | 
-while read f 
-do
-    echo "[[$f][$f]]"
-done > $t
-
-# Format the output
-hammer-wiki $t
-
+d = ''
+if len(argv)>1: d = argv[1]
+for f in listdir(join(environ['p'], 'doc',d)):
+    print  "[[%s][%s]]" % (join(d,f),f)
