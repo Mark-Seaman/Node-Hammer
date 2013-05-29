@@ -607,7 +607,6 @@
 ./hammer-list
 ./hammer-read
 ./hammer-show
-./hammer-web
 ./hammer-wiki
 ./joy-bashrc
 ./mkexe
@@ -642,6 +641,9 @@
 ./hammer-list.correct
 ./hammer-list.out
 ./hammer-list.tst
+./hammer-show.correct
+./hammer-show.out
+./hammer-show.tst
 ./hammer-wiki.correct
 ./hammer-wiki.out
 ./hammer-wiki.tst
