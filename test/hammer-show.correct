@@ -8,8 +8,8 @@ hammer-show
 <br/> If you think it you can build it.
 <br/> 
 <ul><li> <a href="notes/Home">Hammer Technology</a> </li></ul>
-<ul><li> <a href="book">Books online</a> </li></ul>
-<ul><li> <a href="cmd">Command interface</a> </li></ul>
+<ul><li> <a href="book/">Books online</a> </li></ul>
+<ul><li> <a href="cmd/">Command interface</a> </li></ul>
 
 hammer-show Index
 <br/> <h1>Home</h1>
@@ -20,8 +20,8 @@ hammer-show Index
 <br/> If you think it you can build it.
 <br/> 
 <ul><li> <a href="notes/Home">Hammer Technology</a> </li></ul>
-<ul><li> <a href="book">Books online</a> </li></ul>
-<ul><li> <a href="cmd">Command interface</a> </li></ul>
+<ul><li> <a href="book/">Books online</a> </li></ul>
+<ul><li> <a href="cmd/">Command interface</a> </li></ul>
 
 hammer-show book
 <br/> <h1>Books</h1>
