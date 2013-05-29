@@ -2,4 +2,4 @@
 # Test the documents
 
 cd $pd
-find 
+find | sort
