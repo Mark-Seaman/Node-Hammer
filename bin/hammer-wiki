@@ -1,15 +1,9 @@
 #!/usr/bin/env python
 # Wiki text formatter
 
-from os.path        import isfile, exists
-from sys            import argv
-from re import compile,IGNORECASE,DOTALL
-import re
-
-# Read lines from a file and strip off the tailing newline
-def read_file(filename):
-    if not exists(filename): return [ ]
-    return open(filename).read().split('\n')
+from os.path    import isfile, exists
+from sys        import argv, stdin
+from re         import compile, IGNORECASE, DOTALL
 
 # Create bold text if needed
 def make_heading(line):
@@ -63,13 +57,13 @@ def format_bullets(line):
 # Convert the url in a string to an HTML anchor
 def muse_double_anchor(url):
     s = r"\[\[([\/\w\.\:\-\_]*)\]\[([ \w\.\-\_\,\?\%]*)\]\]"
-    pat = re.compile(s, re.IGNORECASE | re.DOTALL)
+    pat = compile(s, IGNORECASE | DOTALL)
     return pat.sub(r' <a href="\1">\2</a> ', url)
 
 # Convert the url in a string to an HTML anchor
 def muse_single_anchor(url):
     s = r"\[\[([\/\w\.\-\_]*)\]\]"
-    pat = re.compile(s, re.IGNORECASE | re.DOTALL)
+    pat = compile(s, IGNORECASE | DOTALL)
     return  pat.sub(r' <a href="\1">\1</a> ', url)
 
 # Convert the url in a string to an HTML anchor
@@ -80,19 +74,19 @@ def muse_anchor(url):
 # Convert the url in a string to an HTML anchor
 def url_to_anchor(url):
     s = r"(^|[\n ])(([\w]+?://[\w\#$%&~.\-;:=,?@\[\]+]*)(/[\w\#$%&~/.\-;:=,?@\[\]+]*)?)"
-    pat = re.compile(s, re.IGNORECASE | re.DOTALL)
+    pat = compile(s, IGNORECASE | DOTALL)
     return pat.sub(r'\1<a href="\2" target="_blank">\2</a>', url)
 
 # Convert the url in a string to an HTML image tag
 def url_to_image(url):
     s = r"\[\[images/(([\w\#$%&~.\-;:=,?@\[\]+]*)(/[\w\#$%&~/.\-;:=,?@\[\]+]*)?)\]\]"
-    pat = re.compile(s, re.IGNORECASE | re.DOTALL)
+    pat = compile(s, IGNORECASE | DOTALL)
     return pat.sub(r'<img src="/media/mybook/images/\1" alt="\1">', url)
 
 # Convert the Wiki Words to hyperlinks
 def wiki_words(text):
     s = r"([^A-Za-z\"\']*)([A-Z][a-z]+[A-Z][a-z]+([A-Z][a-z]+)*)([^A-Za-z\'\"]*)"
-    pat = re.compile(s, re.DOTALL)
+    pat = compile(s, DOTALL)
     return muse_anchor(pat.sub(r'\1[[\2]]\4', text))
 
 # Convert a single line of muse to html
@@ -128,13 +122,11 @@ def get_title(text):
         return remove_muse(text[0]).rstrip()[2:][:-2]
     return 'No title'
 
-# Create html file contents from the file
-def page_html(path):
-    if isfile(path): 
-        text = read_file(path)
-    else:
-        text = [ path, 'File not found, '+path ]
+# Create html file contents from stdin
+def page_html():
+    text = stdin.read().split('\n')
     return convert_html(text)
 
 # Format the file as HTML
-print page_html(argv[1])
+print page_html()
+

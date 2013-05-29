@@ -5,11 +5,11 @@
 cd $p
 
 # Handle directories
-[[ -d "doc/$1" ]] && hammer-list "doc/$1" && exit 0
+[[ -d "doc/$1" ]] && hammer-list "doc/$1" | hammer-wiki && exit 0
 
 # Handle missing page
 [[ ! -f "doc/$1" ]] && echo "Missing page $1" && exit 0
 
 #Formatter is written in python
-hammer-wiki "doc/$1"
+hammer-wiki < "doc/$1"
 
