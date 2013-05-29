@@ -2,11 +2,11 @@
 # Test the files in this project
 
 cd $pa
-find 
+find | sort
 
 cd $pb
-find
+find | sort
 
 cd $pt
-find
+find | sort
 
