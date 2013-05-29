@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # List a directory as a page
 
-from os.path import isfile, isdir, join, exists
-from os import remove, getcwd, system, listdir, environ
+from os.path import join
+from os import listdir, environ
 from sys import argv
 
 d = ''
