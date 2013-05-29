@@ -42,19 +42,7 @@ app.post('/*:doc?/edit', function(req, res){
 });
 
 
-
-// Doc pages
-//app.get('/', function(req, res){
-//    files.list (function (data) { res.render ('list', data) });
-//});
-// app.get('/*:doc?/exec', function(req, res){
-//     doc = req.params.doc;
-//     files.execute(doc, 
-//                  function(text) { res.render('cmd',{path:doc, text:text}) },   
-//                  function()     { res.send ('Exec Error:'+doc)}
-//                 )
-// });
-
+// Format a document
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
     files.format(doc, 
@@ -62,7 +50,6 @@ app.get('/*:doc?', function(req, res){
                  function()     { res.send ('Doc Error')}
                 )
 });
-
 
 
 // Missing page
