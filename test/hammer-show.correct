@@ -1,24 +1,27 @@
 
 hammer-show
-Missing page Index
-
-hammer-show Home
-<br/> <h1>Hammer</h1>
-<br/> Welcome to Hammer Technology.
+<br/> <h1>Home</h1>
+<br/> Welcome to the Hammer Technology demo.
 <br/> 
 <br/> Learn the fastest way to create high-quality web applications.
 <br/> 
 <br/> If you think it you can build it.
 <br/> 
+<ul><li> <a href="notes/Home">Hammer Technology</a> </li></ul>
+<ul><li> <a href="book">Books online</a> </li></ul>
+<ul><li> <a href="cmd">Command interface</a> </li></ul>
+
+hammer-show Index
+<br/> <h1>Home</h1>
+<br/> Welcome to the Hammer Technology demo.
 <br/> 
-<ul><li> <a href="HammerTechnology">HammerTechnology</a>  -  dive into Hammer</li></ul>
+<br/> Learn the fastest way to create high-quality web applications.
 <br/> 
-<ul><li> <a href="DocViewer">DocViewer</a>  - learn how to use this viewer</li></ul>
+<br/> If you think it you can build it.
 <br/> 
-<ul><li> <a href="Tricks">Tricks</a>  - learn the tricks you need</li></ul>
-<br/> 
-<ul><li> <a href="HammerProject">HammerProject</a>   - notes for developers</li></ul>
-<br/> 
+<ul><li> <a href="notes/Home">Hammer Technology</a> </li></ul>
+<ul><li> <a href="book">Books online</a> </li></ul>
+<ul><li> <a href="cmd">Command interface</a> </li></ul>
 
 hammer-show book
 <br/>  <a href="book/Automate">Automate</a> 

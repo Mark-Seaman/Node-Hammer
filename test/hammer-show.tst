@@ -6,8 +6,8 @@ echo hammer-show
 hammer-show
 
 echo
-echo hammer-show Home
-hammer-show Home
+echo hammer-show Index
+hammer-show Index
 
 echo
 echo hammer-show book
