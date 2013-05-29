@@ -8,7 +8,7 @@ t=/tmp/hammer-list$$
 #d=$1
 #[[ "$d" == "" ]] && d='.'
 
-ls $1 | 
+ls doc/$1 | 
 while read f 
 do
     echo "[[$f][$f]]"
