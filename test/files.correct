@@ -642,3 +642,6 @@
 ./hammer-list.correct
 ./hammer-list.out
 ./hammer-list.tst
+./hammer-wiki.correct
+./hammer-wiki.out
+./hammer-wiki.tst
