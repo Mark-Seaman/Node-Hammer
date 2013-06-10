@@ -43,6 +43,12 @@ app.post('/*:doc?/edit', function(req, res){
 
 
 // Format a document
+app.get('/', function(req, res){
+    res.redirect('/Index');
+});
+app.get('/:doc?/', function(req, res){
+    res.redirect(req.params.doc+'/Index');
+});
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
     files.format(doc, 

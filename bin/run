@@ -2,7 +2,11 @@
 # Show the pipe scan home page
 echo 'Show the app in a browser'
 
+# Run the web server
 echo "Running $*"
 killall node
 cd $p/app
 nohup node app.js  1> /dev/null 2>&1 &
+
+# Show root page in browser
+w localhost:8080
