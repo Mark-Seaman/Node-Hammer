@@ -1,5 +1,5 @@
 #!/bin/bash
 # Read the text for a specific document
 
-cat  $1
-
+[[ -f "$p/doc/$1" ]] && cat  $p/doc/$1 && exit 0
+echo "No file found: $p/doc/$1"

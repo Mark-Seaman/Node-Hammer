@@ -1,17 +1,18 @@
 #!/bin/bash
-# Start working on the project
+# Start working on the simple project
 
+# Vars
 export p=~/Projects/node-hammer
-
-export ph='xxx'
-export pb=$p/bin
+export ph=$joy
 export pa=$p/app
+export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
 
+# Aliases
 alias proot="cd $p"
-alias pbin="cd $pb"
 alias papp="cd $pa"
+alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
 
@@ -19,14 +20,19 @@ alias ptest="cd $pt"
 export PATH=\
 $pb:\
 $pt:\
-$PYTHONPATH:\
 /usr/bin:\
+/sbin:\
 /bin:\
 ~/bin:\
 .
 
+# Show the banner
 reset
-figlet 'node-hammer'
+figlet 'Node Hammer'
 
+# Directory
 cd $p
+
+# Status
+git status
 

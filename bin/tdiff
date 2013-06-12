@@ -5,5 +5,11 @@
 cd $p/test
 
 f=${1/.tst/}
-diff $f.out $f.correct
+t=$f.tmp
+
+# Accept any result the first time
+[[ ! -f $f.correct ]] && cp $f.out $f.correct
+
+# Show differences from actual to expected results
+diff $f.out $f.correct | tee $f.diff 
 
