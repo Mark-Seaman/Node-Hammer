@@ -61,3 +61,5 @@
 ./hammer-wiki.correct
 ./hammer-wiki.out
 ./hammer-wiki.tst
+./update.out
+./update.tst

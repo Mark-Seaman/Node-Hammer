@@ -1,26 +1,15 @@
 #!/bin/bash
 # Test the hammer-show command
 
-echo
-echo hammer-show
-hammer-show
+function execute
+{
+    echo
+    echo  hammer-show $*
+    hammer-show $* | grep -v 'Results from'
+}
+execute 
+execute Index
+execute book
+execute book/Index
+execute book/xxx
 
-echo
-echo hammer-show Index
-hammer-show Index
-
-echo
-echo hammer-show book
-hammer-show book
-
-echo
-echo hammer-show book/Index
-hammer-show book/Index
-
-echo
-echo hammer-show book/xxx
-hammer-show book/xxx
-
-echo
-echo hammer-show book/Automate
-hammer-show book/Automate
