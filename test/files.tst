@@ -2,7 +2,7 @@
 # Test the files in this project
 
 cd $pa
-find | sort
+find | grep -v './node_modules' | sort 
 
 cd $pb
 find | sort

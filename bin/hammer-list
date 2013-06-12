@@ -7,5 +7,6 @@ from sys import argv
 
 d = ''
 if len(argv)>1: d = argv[1]
-for f in listdir(join(environ['p'], 'doc',d)):
+docdir = join(environ['p'], 'doc',d)
+for f in sorted(listdir(docdir)):
     print  "[[%s][%s]]" % (join(d,f),f)
