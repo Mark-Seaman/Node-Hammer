@@ -1,0 +1,148 @@
+____________________
+commit
+____________________
+create
+____________________
+deploy
+____________________
+e
+____________________
+hammer-add
+____________________
+hammer-edit
+____________________
+hammer-execute
+____________________
+hammer-list
+____________________
+hammer-read
+____________________
+hammer-show
+____________________
+hammer-wiki
+____________________
+hammer-write
+____________________
+joy-bashrc
+____________________
+mkexe
+____________________
+page
+____________________
+project
+5c5
+< export p=~/Projects/node-hammer
+---
+> export p=~/Projects/jack-hammer
+31c31
+< figlet 'Node Hammer'
+---
+> figlet 'Jack Hammer'
+____________________
+rbg
+____________________
+rmas
+____________________
+run
+____________________
+search
+____________________
+show
+____________________
+tdiff
+____________________
+te
+____________________
+tfail
+____________________
+tlike
+____________________
+tlist
+____________________
+tnew
+____________________
+todo
+____________________
+tout
+____________________
+tresults
+____________________
+trun
+____________________
+tshow
+____________________
+tst
+____________________
+w
+____________________
+docs.tst
+2c2
+< # Test the documents
+---
+> # Watch for changes in the docs
+5c5
+< find | sort
+---
+> find | sort | grep -v '\.out'
+____________________
+files.tst
+2,11c2
+< # Test the files in this project
+< 
+< cd $pa
+< find | grep -v './node_modules' | sort 
+< 
+< cd $pb
+< find | sort
+< 
+< cd $pt
+< find | sort
+---
+> # File list test
+12a4
+> ls $p $p/* | grep -v .pyc
+____________________
+git.tst
+____________________
+hammer-list.tst
+4,15c4,9
+< echo
+< echo  hammer-list 
+< hammer-list 
+< 
+< echo
+< echo hammer-list book/
+< hammer-list book/
+< 
+< echo
+< echo hammer-list book
+< hammer-list book
+< 
+---
+> function show
+> {
+>     echo
+>     echo  $*
+>     $* | sort
+> }
+16a11,13
+> show  hammer-list 
+> show  hammer-list  test
+> show  hammer-list  seaman1
+____________________
+hammer-show.tst
+9a10
+> 
+12,14c13,16
+< execute book
+< execute book/Index
+< execute book/xxx
+---
+> execute __App__/Index
+> execute __App__
+> execute seaman1
+> execute seaman1/Index
+____________________
+hammer-wiki.tst
+____________________
+update.tst

@@ -2,6 +2,7 @@ lib-cov
 *~
 *.seed
 *.log
+*.diff
 *.csv
 *.dat
 *.out
@@ -18,4 +19,4 @@ npm-debug.log
 *.pyc
 
 django-hammer/doc/simpleapps-doc
-django-hammer/doc
+django-hammer/doc*.diff
