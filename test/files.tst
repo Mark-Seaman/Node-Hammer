@@ -1,12 +1,4 @@
 #!/bin/bash
-# Test the files in this project
+# File list test
 
-cd $pa
-find | grep -v './node_modules' | sort 
-
-cd $pb
-find | sort
-
-cd $pt
-find | sort
-
+ls $p $p/* | grep -v .pyc
