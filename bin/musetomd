@@ -1,0 +1,8 @@
+#!/bin/bash
+# Convert Muse to Markdown
+
+cat $1
+ 
+
+
+

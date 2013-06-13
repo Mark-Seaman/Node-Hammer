@@ -26,6 +26,7 @@ hammer-wiki
 hammer-write
 joy-bashrc
 mkexe
+musetomd
 page
 project
 rbg
@@ -92,6 +93,16 @@ hammer-write.correct
 hammer-write.diff
 hammer-write.out
 hammer-write.tst
+musetohtml.correct
+musetohtml.diff
+musetohtml.out
+musetohtml.tst
+musetomd.correct
+musetomd.diff
+musetomd.out
+musetomd.tst
+sample.html
+sample.muse
 update.correct
 update.diff
 update.out

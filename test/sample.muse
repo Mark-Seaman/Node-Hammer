@@ -1,0 +1,47 @@
+* Formatting Rules *                 -*-muse-*-
+
+This page shows how you can get the format that you want.
+
+After viewing this page edit the file FormattingRules in the doc folder.
+
+ regular text
+
+ **bold text**
+
+ *italic text*
+
+regular text and **bold** text together
+
+List of items
+ * Bullet point #1
+ * Bullet point #2
+
+See also [[Hyperlinks]]
+
+
+* Hyperlinks *
+
+This page shows how you can get the link that you want.
+
+**External links**
+
+http://shrinking-world.org   
+
+[[http://shrinking-world.org][Shrinking World Solutions]] 
+
+_______________________________________________________
+
+**Internal Links**
+
+WikiWord  -- use a wiki word
+
+[[Home]] -- single part link
+
+[[Home][go back home]] -- double part link
+
+
+See also FormattingRules
+
+
+
+
