@@ -15,6 +15,7 @@ app.use(express.bodyParser()); // Automatically parses form data
 
 //-----------------------------------------------------------------------------
 // Static files
+
 app.get('/favicon.ico', function(req, res){
     res.sendfile ('views/favicon.ico');
 });
@@ -23,15 +24,16 @@ app.get('/views/*?:file?', function(req, res){
     res.sendfile ('views/'+req.params.file);
 });
 
-
-
+//-----------------------------------------------------------------------------
 // Edit view
+
 app.get('/*:doc?/edit', function(req, res) {
     doc = req.params.doc;
     files.read (doc, function (text) { 
         res.render ('edit', {doc:doc, text:text} ); 
     });
 });
+
 app.post('/*:doc?/edit', function(req, res){
     doc = req.body.doc;
     text = req.body.text.replace(/\r/gm,'');
@@ -41,14 +43,29 @@ app.post('/*:doc?/edit', function(req, res){
     });
 });
 
-
+//-----------------------------------------------------------------------------
 // Format a document
+
+// Live
+app.get('/live/*:doc?', function(req, res){
+    doc = req.params.doc;
+    files.format(doc, 
+                 function(text) { res.render('live',{doc:'LIVE '+doc, text:text}) },   
+                 function()     { res.send ('Doc Error')}
+                )
+});
+
+// Home
 app.get('/', function(req, res){
     res.redirect('/Index');
 });
+
+// Directory
 app.get('/:doc?/', function(req, res){
     res.redirect(req.params.doc+'/Index');
 });
+
+// Page
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
     files.format(doc, 
@@ -64,7 +81,9 @@ app.get('*', function(req, res){
     res.redirect ('/Home')
 });
 
-// Listen on 8080
-var port = 8080;
+//-----------------------------------------------------------------------------
+// Run server on port
+
+var port = 8086;
 server.listen(port);
 console.log('Listening on port ' + port);

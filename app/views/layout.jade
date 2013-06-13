@@ -1,5 +1,5 @@
 !!! 5
-html(lang="en")
+html(lang="en",ng-app)
   head
 
     block title
@@ -10,9 +10,9 @@ html(lang="en")
     block style
 
       // Twitter bootstrap
-      script(src="/views/jquery-latest.js")
       link(href="/views/bootstrap.min.css",rel="stylesheet")
       script(src="/views/bootstrap.min.js")
+      script(src="/views/angular.min.js")
  
   body(style="margin:3em")
     h1 My Notes
