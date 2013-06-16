@@ -1,0 +1,21 @@
+extends layout
+
+block title
+  title Find 4-thot
+
+block content
+
+  form(method="post", action="/find")
+    style input{width:90%}
+    input(name='id',   type='text', value='') 
+    p
+      center
+        button(class="btn btn-large btn-primary", type="submit", value="Save") Save 
+        x= '&nbsp; &nbsp; &nbsp;'
+        button(class="btn btn-large", type="cancel", value="Cancel",  name="cancel") Cancel
+
+    ul
+      - for (var id in text)
+        - var f = text[id]
+          li
+            a(href='/#{f}') #{f}
