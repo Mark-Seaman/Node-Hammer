@@ -46,6 +46,11 @@ ____________________
 tdiff
 ____________________
 te
+4c4
+< e $p/test/$1.tst
+\ No newline at end of file
+---
+> e $p/test/${1/.tst/}.tst
 ____________________
 tfail
 ____________________
@@ -66,8 +71,21 @@ ____________________
 tshow
 ____________________
 tst
-____________________
-w
+3a4
+> 
+9a11,14
+> # Run the frame buffer server
+> rbg Xvfb :99 -ac
+> export DISPLAY=:99
+> 
+20c25,28
+< tfail
+\ No newline at end of file
+---
+> tfail
+> 
+> # Stop the framebuffer server
+> killall Xvfb
 ____________________
 docs.tst
 2c2
