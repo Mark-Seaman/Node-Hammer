@@ -1,6 +1,0 @@
-DIFF test/files.tst:
-4c4,5
-< ls $p $p/* | grep -v 'pyc$\|diff$\|out$\|like$'
----
-> rmas $p # Remove autosave files
-> ls $p $p/* | grep -v '\.pyc\|\.diff\|\.like\|\.out'
