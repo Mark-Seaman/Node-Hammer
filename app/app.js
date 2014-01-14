@@ -84,6 +84,6 @@ app.get('*', function(req, res){
 //-----------------------------------------------------------------------------
 // Run server on port
 
-var port = 8086;
+var port = process.env.port;
 server.listen(port);
 console.log('Listening on port ' + port);
