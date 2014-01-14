@@ -16,21 +16,28 @@ views
 commit
 create
 deploy
+doc-diff
 doc-diff-all
+doc-pull
+doc-push
 e
+elapsed
 hammer-add
 hammer-edit
 hammer-execute
 hammer-list
 hammer-read
 hammer-show
+hammer-tabs
 hammer-wiki
 hammer-write
 joy-bashrc
+lc
 mkexe
 musetomd
 page
 project
+range
 rbg
 rmas
 run
@@ -42,6 +49,7 @@ te
 tfail
 tlike
 tlist
+tmklike
 tnew
 todo
 tout
@@ -50,6 +58,7 @@ trun
 tshow
 tst
 w
+wiki.py
 
 /home/seaman/Projects/node-hammer/doc:
 book
@@ -106,6 +115,7 @@ musetomd.out
 musetomd.tst
 sample.html
 sample.muse
+tst.out
 update.correct
 update.diff
 update.out
