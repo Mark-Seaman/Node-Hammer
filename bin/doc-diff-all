@@ -1,16 +1,17 @@
 #!/bin/bash
-# Compare the last output with the correct output
+# Show differences of docs from another project
 
-# Go to directory
-cd $p/test
+[ $# -lt 2 ] && echo 'usage: doc-diff $jack src-jack' && exit
 
-# Loop over all of the tests
-for f in *.tst
-do 
-    x=`tdiff $f`
+cd $p
+for f in `$2`
+do
+    x=`diff $f $1/$f`
     [ ! -z "$x" ]                                               &&
     echo '----------------------------------------------------' &&
     echo "                       $f                           " &&
     echo '----------------------------------------------------' &&
-    tdiff $f
+    diff $f $1/$f
+    #[ ! -z "`diff $f $1/$f`" ] && echo "DIFF $f:" && diff $f $1/$f
 done
+
