@@ -5,12 +5,14 @@
 cd $p/test
 
 # Loop over all of the tests
+{
 for f in *.tst
 do 
     x=`tdiff $f`
-    [ ! -z "$x" ]                                               &&
+    [[ ! -z "$x" ]]                                             &&
     echo '----------------------------------------------------' &&
     echo "                       $f                           " &&
     echo '----------------------------------------------------' &&
     tdiff $f
 done
+} | less

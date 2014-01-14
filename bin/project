@@ -15,6 +15,7 @@ alias papp="cd $pa"
 alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
+alias tres='tresults'
 
 # Path
 export PATH=\
