@@ -1,10 +1,11 @@
 body {
     background: #ffffff;
-    margin: 0em;
+    margin: 2em;
+    padding: 1em;
 }
 
 div.page {
-    background: #efefcf;
+    background: #efefef;
     -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
     -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
     box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
@@ -14,110 +15,4 @@ div.page {
 
 hr {
     border:2px solid darkgreen;
-}
-
-.show-false {
-    /* visibility: hidden; text-decoration: line-through; */
-    color:gray
-}
-
-.disable-false {
-    visibility: hidden; 
-    min-height:1px;
-}
-
-.view {
-    background-color:black;
-}
-
-.graphView {
-    margin:0em;
-}
-
-.switches {
-    background-color: black; 
-    padding:10px;
-    width: 1000px;
-}
-
-.defects {
-    background: white; 
-    width: 800px;
-    height: 120px;
-}
-
-.oscope {
-    background: white; 
-    width: 800px;
-    height: 600px;
-}
-
-.floatingControls {
-    position: absolute;
-    left: 475px;
-    top: 20px;
-}
-
-#graphdiv {
-    /*background: lightgrey;*/
-    width: 1200px;
-}
-
-/* From views.css */
-
-#canvas-clipping {
-    background:black;
-    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-}
-
-#canvas-flaw-summary {
-    background:grey;
-    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    margin: 5px;
-}
-
-#canvas-wall-summary {
-    background:grey;
-    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    margin: 5px;
-}
-
-#canvas-wall {
-    background: black;
-    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    margin:  5px;
-}
-
-#canvas-flaw {
-    background: black;
-    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    margin: 5px;
-}
-
-#canvas-oscope {
-    background: black;
-    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-    margin: 5px;
-}
-
-.floatingControls {
-    position: absolute;
-    left: 1000px;
-    top: 20px;
-}
-
-#canvas {
-    margin: 10px;
 }
