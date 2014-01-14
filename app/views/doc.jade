@@ -1,0 +1,21 @@
+extends layout
+
+block title
+  title Doc Viewer - #{doc}
+
+block content
+
+  #results
+
+    a(href='/')      Home 
+    span &nbsp;&nbsp;&nbsp;&nbsp;
+    a(href='#{doc}/edit') Edit
+
+    div(class='page') 
+        text!= text
+
+  #file
+
+    b File: #{doc}
+
+
