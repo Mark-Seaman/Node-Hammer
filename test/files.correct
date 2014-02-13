@@ -1,3 +1,6 @@
+Remove automatically saved files from this directory tree
+Git orig files
+Git libpeerconnection files
 /home/seaman/Projects/node-hammer:
 app
 bin
@@ -21,6 +24,7 @@ doc-pull
 doc-push
 e
 elapsed
+filter-path
 hammer-add
 hammer-edit
 hammer-execute
