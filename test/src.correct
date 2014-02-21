@@ -66,10 +66,6 @@ test/content.tst
 test/docs.tst
 test/files.tst
 test/git.tst
-test/hammer-read.tst
-test/hammer-show.tst
-test/hammer-wiki.tst
-test/hammer-write.tst
 test/musetohtml.tst
 test/musetomd.tst
 test/src.tst
