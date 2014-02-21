@@ -1,0 +1,9 @@
+#!/bin/bash
+# List all the source code
+
+{
+cd $p
+find bin | grep -v '.pyc\|^bin$\|^bin/util$'
+find test -name '*.tst' 
+} | sort
+

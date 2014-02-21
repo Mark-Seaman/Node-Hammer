@@ -24,13 +24,7 @@ hammer-show Index
 <ul><li> <a href="cmd/">Command interface</a> </li></ul>
 
 hammer-show book
-<br/> <h1>Books</h1>
-<br/> Welcome to Hammer Books.
-<br/> 
-<br/> Select any of the following books:
-<ul><li> <a href="Automate/AutomateYourWorld">How to automate your world</a> </li></ul>
-<ul><li> <a href="Software/Home">World Class Software</a> </li></ul>
-<br/> 
+redirect:book/Index
 
 hammer-show book/Index
 <br/> <h1>Books</h1>
@@ -42,4 +36,4 @@ hammer-show book/Index
 <br/> 
 
 hammer-show book/xxx
-Missing page book/xxx
+redirect:xxx/missing

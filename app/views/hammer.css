@@ -1,0 +1,18 @@
+body {
+    background: #ffffff;
+    margin: 2em;
+    padding: 1em;
+}
+
+div.page {
+    background: #efefef;
+    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    margin: 3em;
+    padding: 3em;
+}
+
+hr {
+    border:2px solid darkgreen;
+}

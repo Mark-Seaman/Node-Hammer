@@ -46,15 +46,6 @@ app.post('/*:doc?/edit', function(req, res){
 //-----------------------------------------------------------------------------
 // Format a document
 
-// Live
-app.get('/live/*:doc?', function(req, res){
-    doc = req.params.doc;
-    files.format(doc, 
-                 function(text) { res.render('live',{doc:'LIVE '+doc, text:text}) },   
-                 function()     { res.send ('Doc Error')}
-                )
-});
-
 // Home
 app.get('/', function(req, res){
     res.redirect('/Index');
@@ -69,21 +60,20 @@ app.get('/:doc?/', function(req, res){
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
     files.format(doc, 
-                 function(text) { res.render('show',{doc:doc, text:text}) },   
+                 function(text) { res.render('doc',{doc:doc, text:text}) },   
                  function()     { res.send ('Doc Error')}
                 )
 });
 
-
 // Missing page
 app.get('*', function(req, res){
     console.log("Page:"+req.url)
-    res.redirect ('/Home')
+    res.redirect ('/Index')
 });
 
 //-----------------------------------------------------------------------------
 // Run server on port
 
-var port = 8086;
+var port = process.env.port;
 server.listen(port);
 console.log('Listening on port ' + port);

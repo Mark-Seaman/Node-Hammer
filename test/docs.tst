@@ -1,5 +1,5 @@
 #!/bin/bash
-# Test the documents
+# Watch for changes in the docs
 
 cd $pd
-find | sort
+find | sort | grep -v '\.out'

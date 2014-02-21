@@ -8,6 +8,7 @@ export pa=$p/app
 export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
+export port='8082'
 
 # Aliases
 alias proot="cd $p"
@@ -15,6 +16,7 @@ alias papp="cd $pa"
 alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
+alias tres='tresults'
 
 # Path
 export PATH=\
