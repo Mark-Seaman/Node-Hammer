@@ -7,11 +7,11 @@
 
 
 from sys        import argv, stdin
-from os.path    import exists,join
+from os.path    import exists, join, isfile
 from os         import environ,system
 from util.tabs  import print_tab_doc, print_all_tabs
 from util.wiki  import convert_html
-from util.files import read_file, write_file
+from util.files import read_text, write_file
 
 #-----------------------------------------------------------------------------
 # Add ins
@@ -71,11 +71,50 @@ def print_page_html():
     print_all_tabs(text)
 
 
+# Convert a url to a directory
+def doc_path(doc):
+    return join(environ['pd'],doc)
+
+
+# Return the new url to visit  (Implied path host/user/doc)
+def redirect_path(url):
+    doc = doc_path(url)
+    if exists(doc):
+        if not isfile(doc):
+            #print 'DOCDIR='+doc
+            index = join(doc,'Index')
+            if exists(index):
+                #print 'INDEX='+index
+                return url+'/Index'
+            else:
+                return url+'/Index/missing'
+    else:
+        return url+'/missing' 
+
+
+# Either format the doc or return the redirect page
+def doc_redirect (url):
+    doc = doc_path(doc)
+    if exists(doc):
+        if not isfile(doc):
+            #print 'DOCDIR='+doc
+            index = join(doc,'Index')
+            if exists(index):
+                #print 'INDEX='+index
+                print redirect_path(url) + '/Index'
+            else:
+                print redirect_path(url) + '/Index/missing'
+    else:
+        print redirect_path(url) + '/missing' 
+
+
 # Show the formatted document for the file
 def doc_show(doc):
-
+    path = doc_path(doc)
     d = doc[doc.find('/')+1:]
-    path = join(environ['pd'],doc)
+
+    if exists(path) and isfile(path):
+        print_tab_doc(path)
 
     if not exists(path):
         index = join(path,'Index')
@@ -84,15 +123,23 @@ def doc_show(doc):
         else:
             print "redirect:%s/missing" % d
     else:
-        system ('hammer-show '+doc)
+        print redirect_path(doc)
 
 
 # Put the document text in storage
 def doc_put(doc):
-    write_file(doc, read_input())
+    if not redirect_path(doc):
+        path = doc_path(doc)
+        write_file(f, read_input())
+    else:
+        print "redirect:%s/missing" % doc
 
 
 # Get the document text from storage
 def doc_get(doc):
-    return read_file(doc)
+    if not redirect_path(doc):
+        path = doc_path(doc)
+        print read_text(path)
+    else:
+        print "redirect:%s/missing" % doc
 

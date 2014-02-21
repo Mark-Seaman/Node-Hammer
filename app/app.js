@@ -53,12 +53,15 @@ app.get('/', function(req, res){
 
 // Directory
 app.get('/:doc?/', function(req, res){
-    res.redirect(req.params.doc+'/Index');
+    doc = req.params.doc;
+    console.log('Page:'+doc)
+    res.redirect(req.params.doc+'/Index')
 });
 
 // Page
 app.get('/*:doc?', function(req, res){
     doc = req.params.doc;
+    console.log('Page:'+doc)
     files.format(doc, 
                  function(text) { res.render('doc',{doc:doc, text:text}) },   
                  function()     { res.send ('Doc Error')}
