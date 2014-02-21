@@ -18,9 +18,9 @@ var write_file = function (doc, text, action) {
 
 // Format a wiki page
 var format_file = function(doc, show, create) {
-    exec('hammer-show '+doc, function(error,stdout) { 
+    exec('doc-show '+doc, function(error,stdout) { 
         if (error) 
-            show ("hammer-show error:"+doc+','+error)
+            show ("doc-show error:"+doc+','+error)
         else
             show(stdout) 
     })
