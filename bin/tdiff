@@ -1,9 +1,8 @@
 #!/bin/bash
 # Compare the last output with the correct output
 
-# Go to directory
-cd $p/test
 
+# Go to directory
 f=${1/.tst/}
 [ ! -x $f.tst ]  && cd $p/test 
 
