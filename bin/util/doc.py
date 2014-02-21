@@ -79,6 +79,8 @@ def doc_path(doc):
 # Return the new url to visit  (Implied path host/user/doc)
 def redirect_path(url):
     doc = doc_path(url)
+    if exists(doc) and isfile(doc):
+        return
     if exists(doc):
         if not isfile(doc):
             #print 'DOCDIR='+doc
@@ -94,34 +96,15 @@ def redirect_path(url):
 
 # Either format the doc or return the redirect page
 def doc_redirect (url):
-    doc = doc_path(doc)
-    if exists(doc):
-        if not isfile(doc):
-            #print 'DOCDIR='+doc
-            index = join(doc,'Index')
-            if exists(index):
-                #print 'INDEX='+index
-                print redirect_path(url) + '/Index'
-            else:
-                print redirect_path(url) + '/Index/missing'
-    else:
-        print redirect_path(url) + '/missing' 
+    if redirect_path(doc):
+        print redirect_path(url)
 
 
 # Show the formatted document for the file
 def doc_show(doc):
-    path = doc_path(doc)
-    d = doc[doc.find('/')+1:]
-
-    if exists(path) and isfile(path):
-        print_tab_doc(path)
-
-    if not exists(path):
-        index = join(path,'Index')
-        if exists(index):
-            print "redirect:%s/Index" % d
-        else:
-            print "redirect:%s/missing" % d
+    if not redirect_path(doc):
+        #    d = doc[doc.find('/')+1:]
+        print_tab_doc(doc_path(doc))
     else:
         print redirect_path(doc)
 
