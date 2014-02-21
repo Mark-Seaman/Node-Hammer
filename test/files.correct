@@ -97,14 +97,6 @@ files.correct
 files.tst
 git.correct
 git.tst
-hammer-read.correct
-hammer-read.tst
-hammer-show.correct
-hammer-show.tst
-hammer-wiki.correct
-hammer-wiki.tst
-hammer-write.correct
-hammer-write.tst
 musetohtml.correct
 musetohtml.tst
 musetomd.correct

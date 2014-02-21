@@ -4,7 +4,8 @@ Create files
 
 Get files
 ------------------
-No doc found, /home/seaman/Projects/node-hammer/doc/Public/test/Missing
+redirect:Public/test/Missing/missing
+None
 * Test User Home *
 This is a test page for the test user.
 
@@ -15,11 +16,13 @@ This is a test page for the test user.
 
 This is some more text
 
+None
 * Test Document *
 
 This is a test.
 
 
+None
 * Test User Home *
 This is a test page for the test user.
 
@@ -30,10 +33,11 @@ This is a test page for the test user.
 
 This is some more text
 
+None
 
 Redirect to Index
 ------------------
-redirect:test/Index
+Public/test/Index
 test/Index
 
 Index
@@ -102,5 +106,5 @@ Formatted output
 
 Test missing file
 ------------------
-redirect:test/xxx/missing
+Public/test/xxx/missing
 test/xxx/missing
