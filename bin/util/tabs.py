@@ -9,7 +9,7 @@ from subprocess import Popen,PIPE
 from random     import choice
 
 from util.wiki  import convert_html
-from util.files import do_command,read_text
+from util.files import do_command,read_text,read_file
 
 
 # Feature a single line of the input stream
@@ -23,8 +23,8 @@ def lookup_quote(line, lines):
 
 
 # Select a line of text to feature
-def extract_random_line(text):
-    lines = text.split('\n')
+def extract_random_line(lines):
+    #lines = text.split('\n')
     return '\n'.join([ lookup_quote(line, lines) for line in lines ])
 
 
@@ -59,20 +59,19 @@ def print_all_tabs(text):
     tabs = text.split('**')
     body = tabs[0].split('\n')
     print convert_html(body)
+    #print 'print_all_tabs:\n', text
     if len(tab_groups)>1:
         print '<div ng-controller="TabbedViewCtrl">'
         print '  <tabset ng-show="true">'
-        for g in tab_groups:
-            print_tab(g)
+        for t in tab_groups:
+            #print '-----------------------\ntab_group:\n'
+            #print t
+            print_tab(t)
         print '  </tabset>'
         print '</div>'
 
-
+# Read a doc and print the formatted HTML (with angular JS tabs)
 def print_tab_doc(f):
-    '''
-    Formatter to add tabs to the HTML formatting
-    '''
-    #f = join(environ['pd'], f)
     text = read_text(f)
-    text = extract_random_line(text)
+    #text = extract_random_line(text)
     print_all_tabs(text)

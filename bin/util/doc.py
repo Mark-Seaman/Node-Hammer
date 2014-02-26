@@ -11,7 +11,7 @@ from os.path    import exists, join, isfile
 from os         import environ,system
 from util.tabs  import print_tab_doc, print_all_tabs
 from util.wiki  import convert_html
-from util.files import read_text, write_file
+from util.files import read_text, read_file, write_file
 
 #-----------------------------------------------------------------------------
 # Add ins
@@ -101,10 +101,18 @@ def doc_redirect (url):
 
 
 # Show the formatted document for the file
+def doc_show_tabs(doc):
+    if not redirect_path(doc):
+        print_tab_doc(doc_path(doc))
+    else:
+        print redirect_path(doc)
+
+
+# Show the formatted document for the file
 def doc_show(doc):
     if not redirect_path(doc):
-        #    d = doc[doc.find('/')+1:]
-        print_tab_doc(doc_path(doc))
+        text = read_file(doc_path(doc))
+        print convert_html(text)
     else:
         print redirect_path(doc)
 

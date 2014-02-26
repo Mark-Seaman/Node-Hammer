@@ -1,5 +1,7 @@
 #!/bin/bash
-# Find text in source code
+# Search for strings in source code
 
-grep $* $p/bin/* $p/app/* $p/test/*
+cd $p
+grep $* `src`
+
 
