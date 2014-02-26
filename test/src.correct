@@ -1,5 +1,6 @@
 
 Jack Hammer Source:
+bin/cache
 bin/commit
 bin/create
 bin/deploy
@@ -59,6 +60,7 @@ bin/util/__init__.py
 bin/util/list.py
 bin/util/table.py
 bin/util/tabs.py
+bin/util/vars.py
 bin/util/wiki.py
 bin/w
 bin/wiki.py
