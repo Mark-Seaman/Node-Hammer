@@ -8,6 +8,7 @@ export pa=$p/app
 export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
+export port=8080
 
 # Aliases
 alias proot="cd $p"
@@ -37,3 +38,5 @@ cd $p
 # Status
 git status
 
+# Use 0.8
+nvm use 0.8.26
